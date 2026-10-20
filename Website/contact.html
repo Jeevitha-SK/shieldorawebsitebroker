@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Shieldora Risk Solutions - Commercial Property Insurance Broker</title>
+  <!-- Site Favicon & Touch Icons -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo-icon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <meta name="description" content="Get in touch with Shieldora Risk Solutions. Connect with our commercial property underwriters, 24/7 emergency claims team, or request a policy review.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#0A192F',
+              'navy-dark': '#060D17',
+              'navy-light': '#1E293B',
+              blue: '#1E40AF',
+              gold: '#D97706',
+              'gold-light': '#FEF3C7',
+              'gold-hover': '#B45309',
+              steel: '#64748B'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '"Inter"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261015-v5">
+  <script>
+    (function () {
+      try {
+        const savedTheme = localStorage.getItem('shieldora_theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+        const savedDir = localStorage.getItem('shieldora-direction') || localStorage.getItem('shieldora_dir') || 'ltr';
+        document.documentElement.setAttribute('dir', savedDir);
+        document.documentElement.setAttribute('lang', savedDir === 'rtl' ? 'ar' : 'en');
+        document.documentElement.dir = savedDir;
+        document.documentElement.lang = savedDir === 'rtl' ? 'ar' : 'en';
+        if (savedDir === 'rtl') {
+          document.documentElement.classList.add('rtl-layout');
+        }
+        const savedAg = localStorage.getItem('shieldora-antigravity') === 'true' || localStorage.getItem('shieldora_antigravity') === 'true';
+        if (savedAg) {
+          document.documentElement.classList.add('anti-gravity-enabled');
+          document.documentElement.classList.add('anti-gravity');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <!-- Guaranteed Full-Width Navbar & Card Alignment Protection -->
+  <style id="critical-layout-protection">
+    header,
+    header.main-navbar,
+    .main-navbar {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    .navbar-container {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      padding-left: 40px !important;
+      padding-right: 40px !important;
+      padding-top: 15px !important;
+      padding-bottom: 15px !important;
+      box-sizing: border-box !important;
+    }
+    @media (max-width: 1279px) and (min-width: 1024px) {
+      .navbar-container {
+        padding-left: 32px !important;
+        padding-right: 32px !important;
+      }
+    }
+    @media (max-width: 1023px) {
+      .navbar-container {
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+      }
+    }
+    @media (max-width: 639px) {
+      .navbar-container {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+      }
+    }
+    footer > div,
+    footer .footer-container {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding-left: 40px !important;
+      padding-right: 40px !important;
+      box-sizing: border-box !important;
+    }
+    @media (max-width: 1279px) and (min-width: 1024px) {
+      footer > div,
+      footer .footer-container {
+        padding-left: 32px !important;
+        padding-right: 32px !important;
+      }
+    }
+    @media (max-width: 1023px) {
+      footer > div,
+      footer .footer-container {
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+      }
+    }
+    @media (max-width: 639px) {
+      footer > div,
+      footer .footer-container {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+      }
+    }
+    .insurance-card {
+      width: 100% !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+    }
+    .insurance-card > a.block,
+    .insurance-card > div.relative {
+      height: 200px !important;
+      max-height: 200px !important;
+      overflow: hidden !important;
+      display: block !important;
+      position: relative !important;
+    }
+    .insurance-card img {
+      width: 100% !important;
+      height: 100% !important;
+      max-height: 200px !important;
+      object-fit: cover !important;
+    }
+  </style>
+  <!-- Resilient Inline Critical Navigation Spacing & Brand Logo -->
+  <style id="critical-navbar-spacing">
+    .navbar-center { display: flex !important; align-items: center !important; gap: 1.5rem !important; }
+    .navbar-center .nav-link, .navbar-center > a, .navbar-center > div { margin-left: 0.25rem !important; margin-right: 0.25rem !important; }
+    .site-brand img, .site-brand svg { width: 40px !important; height: 40px !important; flex-shrink: 0 !important; }
+  </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col font-sans transition-colors duration-300">
+
+        <!-- Main Navigation Header (Single Sticky Flexbox Row: Logo | Center Links | Right Actions) -->
+    <!-- Main Navigation Header (Single Sticky Flexbox Row: Logo | Center Links | Right Actions) -->
+  <header class="main-navbar glass-nav sticky top-0 z-40 transition-all duration-300">
+    <div class="navbar-container">
+      
+      <!-- Left Section: Logo & Brand Name -->
+      <div class="navbar-left">
+        <a href="index.html" class="site-brand flex items-center flex-shrink-0 focus:outline-none" aria-label="Shieldora Risk Solutions Home">
+          <svg class="brand-logo w-10 h-10 object-contain flex-shrink-0" viewBox="0 0 52 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Shieldora Logo"><path d="M26 2L6 9.5V25C6 38.5 14.5 48.5 26 51C37.5 48.5 46 38.5 46 25V9.5L26 2Z" fill="#0A192F" stroke="#D97706" stroke-width="2.5" stroke-linejoin="round"/><path d="M26 5L9 11.5V24C9 35.5 16.5 44.5 26 47C35.5 44.5 43 35.5 43 24V11.5L26 5Z" fill="url(#shield_grad_brand)"/><rect x="14" y="24" width="6" height="18" rx="1" fill="#FFFFFF" fill-opacity="0.85"/><line x1="16" y1="27" x2="18" y2="27" stroke="#0A192F" stroke-width="1"/><line x1="16" y1="31" x2="18" y2="31" stroke="#0A192F" stroke-width="1"/><line x1="16" y1="35" x2="18" y2="35" stroke="#0A192F" stroke-width="1"/><rect x="22" y="16" width="8" height="26" rx="1" fill="#F59E0B"/><line x1="24.5" y1="20" x2="27.5" y2="20" stroke="#0A192F" stroke-width="1.2"/><line x1="24.5" y1="24" x2="27.5" y2="24" stroke="#0A192F" stroke-width="1.2"/><line x1="24.5" y1="28" x2="27.5" y2="28" stroke="#0A192F" stroke-width="1.2"/><line x1="24.5" y1="32" x2="27.5" y2="32" stroke="#0A192F" stroke-width="1.2"/><line x1="24.5" y1="36" x2="27.5" y2="36" stroke="#0A192F" stroke-width="1.2"/><rect x="32" y="21" width="6" height="21" rx="1" fill="#FFFFFF" fill-opacity="0.85"/><line x1="34" y1="25" x2="36" y2="25" stroke="#0A192F" stroke-width="1"/><line x1="34" y1="29" x2="36" y2="29" stroke="#0A192F" stroke-width="1"/><line x1="34" y1="33" x2="36" y2="33" stroke="#0A192F" stroke-width="1"/><circle cx="26" cy="11" r="2.5" fill="#F59E0B"/><defs><linearGradient id="shield_grad_brand" x1="26" y1="5" x2="26" y2="47" gradientUnits="userSpaceOnUse"><stop stop-color="#1E3A8A"/><stop offset="1" stop-color="#0A192F"/></linearGradient></defs></svg>
+          <div class="brand-name flex flex-col justify-center min-w-0">
+            <span class="brand-title font-extrabold text-base sm:text-lg tracking-tight leading-none text-brand-navy dark:text-white">SHIELDORA</span>
+            <span class="brand-subtitle text-[9px] sm:text-[10px] font-bold tracking-widest leading-tight text-amber-500 uppercase mt-0.5">RISK SOLUTIONS</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Center Section: Navigation Links (7 Links: Home, About, Services, Pricing, Blog, Contact, Dashboard) -->
+      <nav class="navbar-center hidden lg:flex items-center gap-x-6 lg:gap-x-7 text-sm font-semibold text-slate-700 dark:text-slate-200 whitespace-nowrap">
+        
+        <!-- Home Dropdown -->
+        <div class="relative group py-2">
+          <a href="index.html" class="nav-link flex items-center space-x-1 hover:text-amber-600 dark:hover:text-amber-400 transition-colors">
+            <span>Home</span>
+            <i class="fa-solid fa-chevron-down text-[9px] text-slate-400 group-hover:rotate-180 transition-transform"></i>
+          </a>
+          <div class="absolute left-0 mt-1 w-56 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 p-2 hidden group-hover:block transition-all z-50">
+            <a href="index.html" class="flex items-center p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700/60 text-slate-900 dark:text-white">
+              <i class="fa-solid fa-building text-amber-500 mr-2.5 text-sm"></i>
+              <div>
+                <div class="font-bold text-xs">General Services</div>
+                <div class="text-[10px] text-slate-400">Broad commercial coverage</div>
+              </div>
+            </a>
+            <a href="home-2.html" class="flex items-center p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700/60 text-slate-900 dark:text-white">
+              <i class="fa-solid fa-city text-blue-500 mr-2.5 text-sm"></i>
+              <div>
+                <div class="font-bold text-xs">Real Estate Niche</div>
+                <div class="text-[10px] text-slate-400">CRE owners & industrial hubs</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- About -->
+        <a href="about.html" class="nav-link hover:text-amber-600 dark:hover:text-amber-400 transition-colors">About</a>
+
+                
+        <!-- Services -->
+        <a href="services.html" class="nav-link hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Services</a>
+
+
+
+        <!-- Pricing -->
+        <a href="pricing.html" class="nav-link hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Pricing</a>
+
+        <!-- Blog -->
+        <a href="blog.html" class="nav-link hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Blog</a>
+
+        <!-- Contact -->
+        <a href="contact.html" class="nav-link hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Contact</a>
+
+        <!-- Dashboard -->
+        <a href="dashboard-client.html" class="nav-link hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Dashboard</a>
+
+      </nav>
+
+      <!-- Right Section: Action and Utility Controls (RTL, Theme icon, Login, Register) -->
+      <div class="navbar-right hidden lg:flex items-center whitespace-nowrap">
+        
+        <!-- RTL Toggle -->
+        <button type="button" class="rtl-toggle-btn px-2.5 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:border-amber-500 hover:text-amber-500 text-xs font-semibold transition-colors" aria-label="Toggle Direction" title="Switch text direction">
+          <span class="rtl-toggle-label">RTL</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button type="button" class="theme-toggle-btn p-2 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:border-amber-500 hover:text-amber-500 text-xs transition-colors" aria-label="Switch theme" title="Switch theme">
+          <i class="theme-toggle-icon fa-solid fa-moon text-xs"></i>
+        </button>
+
+        <!-- Login -->
+        <a href="login.html" class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:border-amber-500 hover:text-amber-500 text-xs font-semibold transition-colors">Login</a>
+
+        <!-- Register -->
+        <a href="register.html" class="px-3.5 py-1.5 rounded-lg font-bold text-xs text-white bg-amber-500 hover:bg-amber-600 shadow-sm transition-colors">Register</a>
+
+      </div>
+
+      <!-- Mobile Controls & Hamburger (Under lg) -->
+      <div class="flex lg:hidden items-center space-x-2">
+        <button type="button" class="rtl-toggle-btn px-2 py-1 text-xs font-bold rounded-lg border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:text-amber-500" aria-label="Toggle Direction" title="Switch text direction">
+          <span class="rtl-toggle-label">RTL</span>
+        </button>
+        <button type="button" class="theme-toggle-btn p-2 text-slate-700 dark:text-slate-300 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800" aria-label="Switch theme" title="Switch theme">
+          <i class="theme-toggle-icon fa-solid fa-moon text-sm"></i>
+        </button>
+        <button id="mobile-menu-btn" class="p-2 text-slate-700 dark:text-slate-200 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none" aria-label="Open Navigation">
+          <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-menu" class="fixed inset-0 z-50 bg-slate-900/80 backdrop-blur-sm hidden lg:hidden">
+    <div class="fixed inset-y-0 right-0 max-w-xs w-full bg-white dark:bg-slate-900 shadow-2xl p-6 overflow-y-auto flex flex-col justify-between">
+      <div>
+        <div class="flex items-center justify-between pb-6 border-b border-slate-200 dark:border-slate-800">
+          <a href="index.html" class="site-brand flex items-center flex-shrink-0 focus:outline-none" aria-label="Shieldora Risk Solutions Home">
+            <svg class="brand-logo w-10 h-10 object-contain flex-shrink-0" viewBox="0 0 52 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Shieldora Logo"><path d="M26 2L6 9.5V25C6 38.5 14.5 48.5 26 51C37.5 48.5 46 38.5 46 25V9.5L26 2Z" fill="#0A192F" stroke="#D97706" stroke-width="2.5" stroke-linejoin="round"/><path d="M26 5L9 11.5V24C9 35.5 16.5 44.5 26 47C35.5 44.5 43 35.5 43 24V11.5L26 5Z" fill="url(#shield_grad_brand)"/><rect x="14" y="24" width="6" height="18" rx="1" fill="#FFFFFF" fill-opacity="0.85"/><line x1="16" y1="27" x2="18" y2="27" stroke="#0A192F" stroke-width="1"/><line x1="16" y1="31" x2="18" y2="31" stroke="#0A192F" stroke-width="1"/><line x1="16" y1="35" x2="18" y2="35" stroke="#0A192F" stroke-width="1"/><rect x="22" y="16" width="8" height="26" rx="1" fill="#F59E0B"/><line x1="24.5" y1="20" x2="27.5" y2="20" stroke="#0A192F" stroke-width="1.2"/><line x1="24.5" y1="24" x2="27.5" y2="24" stroke="#0A192F" stroke-width="1.2"/><line x1="24.5" y1="28" x2="27.5" y2="28" stroke="#0A192F" stroke-width="1.2"/><line x1="24.5" y1="32" x2="27.5" y2="32" stroke="#0A192F" stroke-width="1.2"/><line x1="24.5" y1="36" x2="27.5" y2="36" stroke="#0A192F" stroke-width="1.2"/><rect x="32" y="21" width="6" height="21" rx="1" fill="#FFFFFF" fill-opacity="0.85"/><line x1="34" y1="25" x2="36" y2="25" stroke="#0A192F" stroke-width="1"/><line x1="34" y1="29" x2="36" y2="29" stroke="#0A192F" stroke-width="1"/><line x1="34" y1="33" x2="36" y2="33" stroke="#0A192F" stroke-width="1"/><circle cx="26" cy="11" r="2.5" fill="#F59E0B"/><defs><linearGradient id="shield_grad_brand" x1="26" y1="5" x2="26" y2="47" gradientUnits="userSpaceOnUse"><stop stop-color="#1E3A8A"/><stop offset="1" stop-color="#0A192F"/></linearGradient></defs></svg>
+            <div class="brand-name flex flex-col justify-center min-w-0">
+              <span class="brand-title font-extrabold text-base tracking-tight leading-none text-brand-navy dark:text-white">SHIELDORA</span>
+              <span class="brand-subtitle text-[9px] font-bold tracking-widest leading-tight text-amber-500 uppercase mt-0.5">RISK SOLUTIONS</span>
+            </div>
+          </a>
+          <button id="close-mobile-menu" class="p-2 text-slate-400 hover:text-slate-700 dark:hover:text-white" aria-label="Close Menu">
+            <i class="fa-solid fa-xmark text-xl"></i>
+          </button>
+        </div>
+        <div class="py-6 space-y-3 font-semibold text-slate-800 dark:text-slate-200 text-sm">
+          <div>
+            <button class="mobile-dropdown-btn flex items-center justify-between w-full py-2 text-left">
+              <span>Home Pages</span>
+              <i class="chevron-icon fa-solid fa-chevron-down text-xs transition-transform"></i>
+            </button>
+            <div class="hidden pl-4 py-2 space-y-2 text-xs text-slate-600 dark:text-slate-400">
+              <a href="index.html" class="block py-1 hover:text-amber-500">General Services</a>
+              <a href="home-2.html" class="block py-1 hover:text-amber-500">Real Estate Niche</a>
+            </div>
+          </div>
+
+          <a href="about.html" class="block py-2 hover:text-amber-500">About Us</a>
+                    <a href="services.html" class="block py-2 hover:text-amber-500">Services</a>
+          <a href="pricing.html" class="block py-2 hover:text-amber-500">Pricing & Packages</a>
+          <a href="blog.html" class="block py-2 hover:text-amber-500">Risk Insights & Blog</a>
+          <a href="contact.html" class="block py-2 hover:text-amber-500">Contact Us</a>
+          <a href="dashboard-client.html" class="block py-2 hover:text-amber-500">Dashboard</a>
+        </div>
+      </div>
+      <div class="pt-6 border-t border-slate-200 dark:border-slate-800 space-y-3">
+        <a href="login.html" class="w-full block text-center py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 font-bold text-sm hover:border-amber-500 hover:text-amber-500">
+          Login
+        </a>
+        <a href="register.html" class="w-full block text-center py-2.5 rounded-xl font-bold text-sm text-white bg-amber-500 hover:bg-amber-600 shadow-md">
+          Register
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO & 24/7 CLAIMS BANNER -->
+  <!-- MAIN PAGE CONTENT WRAPPER -->
+  <main id="main-content" class="flex-1 w-full flex flex-col">
+    <section class="hero-page-section relative bg-slate-50 dark:bg-brand-navy-dark text-slate-900 dark:text-white py-16 lg:py-20 overflow-hidden">
+    <!-- Hero Background Image with Directional Overlay -->
+    <div class="hero-bg-container absolute inset-0 z-0 overflow-hidden">
+      <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=2400&q=85" alt="Shieldora commercial advisory and client operations center" class="hero-bg-img object-cover">
+      <div class="hero-directional-overlay absolute inset-0 bg-gradient-to-r"></div>
+      <div class="absolute inset-0 hero-pattern opacity-30 dark:opacity-40"></div>
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
+
+      <div class="max-w-2xl space-y-4 text-left">
+        <span class="text-amber-600 dark:text-amber-400 text-xs font-extrabold tracking-widest uppercase">Direct Broker Access</span>
+        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight text-slate-900 dark:text-white">
+          Connect With Our Commercial Underwriting Advisors
+        </h1>
+        <p class="text-base sm:text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
+          Whether you need a full portfolio risk diagnostic, an expedited Certificate of Insurance (COI), or 24/7 emergency disaster response, our specialists are ready to assist.
+        </p>
+      </div>
+
+      <!-- 24/7 Emergency Claims Hotline Strip -->
+      <div class="mt-8 max-w-2xl p-5 rounded-2xl bg-amber-500/10 dark:bg-amber-500/15 border border-amber-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center space-x-3 text-left">
+          <div class="w-10 h-10 rounded-xl bg-amber-500 text-white flex items-center justify-center text-lg shrink-0">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+          </div>
+          <div>
+            <div class="font-extrabold text-sm text-slate-900 dark:text-white">24/7 Emergency Disaster & Claims Dispatch</div>
+            <div class="text-xs text-slate-600 dark:text-slate-300">For active pipe bursts, fires, storm loss, or catastrophic building damage.</div>
+          </div>
+        </div>
+        <a href="tel:18005557475" class="px-5 py-2.5 rounded-xl font-extrabold text-xs bg-amber-500 text-white hover:bg-amber-600 transition-colors shrink-0">
+          <i class="fa-solid fa-phone-volume mr-1.5"></i> Call 1-800-555-RISK
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MAIN CONTACT SECTION: FORM & DETAILS -->
+  <section class="py-20 bg-slate-50 dark:bg-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Left: Interactive Contact Form -->
+        <div class="lg:col-span-7 bg-white dark:bg-slate-800 p-8 sm:p-10 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm space-y-6">
+          <div>
+            <h2 class="text-2xl font-extrabold text-slate-900 dark:text-white">Send an Underwriting Inquiry</h2>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Our commercial brokers review all inquiries and respond within 2 business hours.</p>
+          </div>
+
+          <!-- Success Alert Placeholder (Managed by forms.js) -->
+          <div id="contact-success-alert" class="hidden p-4 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-300 text-emerald-800 dark:text-emerald-200 text-xs">
+            <i class="fa-solid fa-circle-check mr-2"></i> Inquiry submitted successfully. Your request has been routed to our underwriting desk.
+          </div>
+
+          <form id="main-contact-form" class="space-y-4 text-xs font-semibold">
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block mb-1 text-slate-700 dark:text-slate-300">Full Name *</label>
+                <input type="text" name="fullName" required placeholder="e.g. Robert Sterling" class="input-field w-full p-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white text-sm focus:outline-none">
+              </div>
+              <div>
+                <label class="block mb-1 text-slate-700 dark:text-slate-300">Business Email *</label>
+                <input type="email" name="email" required placeholder="rsterling@realtycorp.com" class="input-field w-full p-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white text-sm focus:outline-none">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block mb-1 text-slate-700 dark:text-slate-300">Direct Phone Number</label>
+                <input type="tel" name="phone" placeholder="(555) 000-0000" class="input-field w-full p-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white text-sm focus:outline-none">
+              </div>
+              <div>
+                <label class="block mb-1 text-slate-700 dark:text-slate-300">Company / Entity Name</label>
+                <input type="text" name="company" placeholder="Sterling Real Estate Holdings LLC" class="input-field w-full p-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white text-sm focus:outline-none">
+              </div>
+            </div>
+
+            <div>
+              <label class="block mb-1 text-slate-700 dark:text-slate-300">Coverage Type / Inquiry Department *</label>
+              <select name="insuranceType" class="input-field w-full p-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white text-sm focus:outline-none">
+                <option value="Commercial Property Insurance">Commercial Property Insurance</option>
+                <option value="General Liability & Umbrella">General Liability & Excess Umbrella</option>
+                <option value="Business Interruption Analysis">Business Interruption & Cash Flow</option>
+                <option value="Equipment & Machinery Breakdown">Equipment Breakdown</option>
+                <option value="Catastrophic Flood / Windstorm">Catastrophic Flood & Windstorm</option>
+                <option value="Claims Advocacy & Support">Claims Assistance / Dispute Review</option>
+                <option value="Certificate of Insurance (COI)">COI Issuance & Lender Compliance</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block mb-1 text-slate-700 dark:text-slate-300">Message / Property Specifications *</label>
+              <textarea name="message" required rows="4" placeholder="Detail your property type, square footage, current renewal date, or specific risk questions..." class="input-field w-full p-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white text-sm focus:outline-none"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-3.5 rounded-xl font-bold text-sm text-white bg-gradient-gold shadow-lg hover:brightness-105 transition-all">
+              <i class="fa-solid fa-paper-plane mr-2"></i> Submit Inquiry to Broker
+            </button>
+            <p class="text-[10px] text-center text-slate-400">
+              *Demonstration form: Inquiries are securely recorded to your browser session and viewable in the Admin Portal.
+            </p>
+          </form>
+        </div>
+
+        <!-- Right: Office Locations, Department Contacts, Interactive Map Placeholder -->
+        <div class="lg:col-span-5 space-y-6">
+          
+          <!-- Office Contacts -->
+          <div class="bg-white dark:bg-slate-800 p-7 rounded-3xl border border-slate-200 dark:border-slate-700 space-y-4">
+            <h3 class="font-extrabold text-base text-slate-900 dark:text-white">Brokerage Offices</h3>
+            
+            <div class="space-y-4 text-xs">
+              <div class="flex items-start space-x-3">
+                <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center shrink-0">
+                  <i class="fa-solid fa-building"></i>
+                </div>
+                <div>
+                  <div class="font-bold text-slate-800 dark:text-slate-200">New York Headquarters (Northeast Desk)</div>
+                  <div class="text-slate-500 dark:text-slate-400">350 Fifth Avenue, 44th Floor, New York, NY 10118</div>
+                  <div class="text-slate-400 text-[11px] mt-0.5">Mon – Fri: 8:00 AM – 6:30 PM EST</div>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-3">
+                <div class="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-500 flex items-center justify-center shrink-0">
+                  <i class="fa-solid fa-warehouse"></i>
+                </div>
+                <div>
+                  <div class="font-bold text-slate-800 dark:text-slate-200">Chicago Hub (Midwest Logistics Desk)</div>
+                  <div class="text-slate-500 dark:text-slate-400">233 S Wacker Dr, Suite 3200, Chicago, IL 60606</div>
+                  <div class="text-slate-400 text-[11px] mt-0.5">Mon – Fri: 8:30 AM – 6:00 PM CST</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Department Contact Direct Lines -->
+          <div class="bg-white dark:bg-slate-800 p-7 rounded-3xl border border-slate-200 dark:border-slate-700 space-y-3">
+            <h3 class="font-extrabold text-base text-slate-900 dark:text-white">Department Desks</h3>
+            <div class="grid grid-cols-2 gap-3 text-xs">
+              <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800">
+                <div class="font-bold text-slate-800 dark:text-slate-200">Underwriting</div>
+                <div class="text-[11px] text-slate-500">underwriting@shieldora.com</div>
+              </div>
+              <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800">
+                <div class="font-bold text-slate-800 dark:text-slate-200">Claims Advocacy</div>
+                <div class="text-[11px] text-slate-500">claims@shieldora.com</div>
+              </div>
+              <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800">
+                <div class="font-bold text-slate-800 dark:text-slate-200">COI Certificates</div>
+                <div class="text-[11px] text-slate-500">certificates@shieldora.com</div>
+              </div>
+              <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800">
+                <div class="font-bold text-slate-800 dark:text-slate-200">Billing Desk</div>
+                <div class="text-[11px] text-slate-500">billing@shieldora.com</div>
+              </div>
+            </div>
+          </div>
+
+                    <!-- Live Interactive Headquarters Map (Touch to Open Live Location) -->
+          <div class="bg-white dark:bg-slate-800 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-sm">
+            <div class="p-4 bg-slate-100 dark:bg-slate-900 flex justify-between items-center text-xs font-bold text-slate-700 dark:text-slate-300 border-b border-slate-200 dark:border-slate-700">
+              <div class="flex items-center space-x-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span><i class="fa-solid fa-map-location-dot text-amber-500 mr-1.5"></i> Headquarters Location</span>
+              </div>
+              <span class="text-[11px] text-slate-500 dark:text-slate-400 font-normal">Empire State Building District</span>
+            </div>
+            <a href="https://maps.google.com/?q=350+Fifth+Avenue,+New+York,+NY+10118" target="_blank" rel="noopener noreferrer" class="block relative w-full h-64 bg-slate-100 dark:bg-slate-900 cursor-pointer overflow-hidden group" title="350 Fifth Avenue, New York, NY 10118">
+              <iframe 
+                title="Shieldora Headquarters Location Map"
+                class="w-full h-full border-0 pointer-events-none"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-73.9915%2C40.7450%2C-73.9800%2C40.7520&amp;layer=mapnik&amp;marker=40.74844%2C-73.98566"
+                loading="lazy">
+              </iframe>
+              <div class="absolute bottom-3 left-3 right-3 pointer-events-none">
+                <div class="inline-flex items-center space-x-2 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 shadow-md text-xs">
+                  <i class="fa-solid fa-building text-amber-500 text-xs"></i>
+                  <span class="font-bold text-slate-900 dark:text-white">350 Fifth Ave, Floor 44, New York, NY 10118</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT FAQ ACCORDION -->
+  <section class="py-16 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-10">
+        <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Frequently Asked Questions</h3>
+      </div>
+
+      <div class="faq-accordion space-y-3">
+        <div class="bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+          <button class="faq-question-btn w-full p-4 text-left font-bold text-xs sm:text-sm text-slate-900 dark:text-white flex justify-between items-center" aria-expanded="false">
+            <span>How fast can Shieldora issue a Certificate of Insurance (COI) for lenders?</span>
+            <i class="faq-icon fa-solid fa-chevron-down text-xs text-slate-400 transition-transform"></i>
+          </button>
+          <div class="faq-answer px-4 pb-4 text-xs text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800 pt-2">
+            Once a commercial policy is active in our portal, you can generate and download certified ACORD 25 and ACORD 28 Certificates of Insurance with customized additional insured wording in less than 60 seconds through your Client Portal.
+          </div>
+        </div>
+
+        <div class="bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+          <button class="faq-question-btn w-full p-4 text-left font-bold text-xs sm:text-sm text-slate-900 dark:text-white flex justify-between items-center" aria-expanded="false">
+            <span>What documents are required to receive a multi-carrier proposal?</span>
+            <i class="faq-icon fa-solid fa-chevron-down text-xs text-slate-400 transition-transform"></i>
+          </button>
+          <div class="faq-answer px-4 pb-4 text-xs text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800 pt-2">
+            To provide firm multi-carrier binding terms, we typically review: (1) Current policy declarations page, (2) Statement of Values (SOV) with building square footage, and (3) 3 to 5-year officially certified loss runs from your existing carrier.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+    <!-- COMPREHENSIVE FOOTER -->
+  </main>
+
+  <footer class="bg-brand-navy-dark text-slate-400 text-xs pt-16 pb-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800">
+        
+        <!-- Brand Info -->
+        <div class="lg:col-span-2 space-y-4">
+          <a href="index.html" class="site-brand flex items-center flex-shrink-0 focus:outline-none mb-4" aria-label="Shieldora Risk Solutions Home">
+            <svg class="brand-logo w-10 h-10 object-contain flex-shrink-0" viewBox="0 0 52 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Shieldora Logo"><path d="M26 2L6 9.5V25C6 38.5 14.5 48.5 26 51C37.5 48.5 46 38.5 46 25V9.5L26 2Z" fill="#0A192F" stroke="#D97706" stroke-width="2.5" stroke-linejoin="round"/><path d="M26 5L9 11.5V24C9 35.5 16.5 44.5 26 47C35.5 44.5 43 35.5 43 24V11.5L26 5Z" fill="url(#shield_grad_brand)"/><rect x="14" y="24" width="6" height="18" rx="1" fill="#FFFFFF" fill-opacity="0.85"/><line x1="16" y1="27" x2="18" y2="27" stroke="#0A192F" stroke-width="1"/><line x1="16" y1="31" x2="18" y2="31" stroke="#0A192F" stroke-width="1"/><line x1="16" y1="35" x2="18" y2="35" stroke="#0A192F" stroke-width="1"/><rect x="22" y="16" width="8" height="26" rx="1" fill="#F59E0B"/><line x1="24.5" y1="20" x2="27.5" y2="20" stroke="#0A192F" stroke-width="1.2"/><line x1="24.5" y1="24" x2="27.5" y2="24" stroke="#0A192F" stroke-width="1.2"/><line x1="24.5" y1="28" x2="27.5" y2="28" stroke="#0A192F" stroke-width="1.2"/><line x1="24.5" y1="32" x2="27.5" y2="32" stroke="#0A192F" stroke-width="1.2"/><line x1="24.5" y1="36" x2="27.5" y2="36" stroke="#0A192F" stroke-width="1.2"/><rect x="32" y="21" width="6" height="21" rx="1" fill="#FFFFFF" fill-opacity="0.85"/><line x1="34" y1="25" x2="36" y2="25" stroke="#0A192F" stroke-width="1"/><line x1="34" y1="29" x2="36" y2="29" stroke="#0A192F" stroke-width="1"/><line x1="34" y1="33" x2="36" y2="33" stroke="#0A192F" stroke-width="1"/><circle cx="26" cy="11" r="2.5" fill="#F59E0B"/><defs><linearGradient id="shield_grad_brand" x1="26" y1="5" x2="26" y2="47" gradientUnits="userSpaceOnUse"><stop stop-color="#1E3A8A"/><stop offset="1" stop-color="#0A192F"/></linearGradient></defs></svg>
+            <div class="brand-name flex flex-col justify-center min-w-0">
+              <span class="brand-title font-extrabold text-lg tracking-tight leading-none text-white">SHIELDORA</span>
+              <span class="brand-subtitle text-[10px] font-bold tracking-widest leading-tight text-amber-500 uppercase mt-0.5">RISK SOLUTIONS</span>
+            </div>
+          </a>
+          <p class="text-slate-400 text-xs leading-relaxed max-w-sm">
+            Shieldora Risk Solutions is a premier commercial property insurance brokerage protecting commercial real estate, industrial infrastructure, and corporate operations nationwide.
+          </p>
+          <div class="text-[11px] text-slate-500 space-y-1">
+            <div>Licensed P&C Brokerage: NY DFS #BR-89102 | IL DOI #49102</div>
+            <div>Authorized Corporate Representative: Marcus Sterling, CPCU</div>
+          </div>
+          <div class="flex items-center space-x-3 pt-2">
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-slate-800 text-slate-300 hover:text-amber-400 hover:bg-slate-700 flex items-center justify-center transition-colors" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-slate-800 text-slate-300 hover:text-amber-400 hover:bg-slate-700 flex items-center justify-center transition-colors" aria-label="X Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-slate-800 text-slate-300 hover:text-amber-400 hover:bg-slate-700 flex items-center justify-center transition-colors" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Insurance Services -->
+        <div class="space-y-3">
+          <h4 class="text-white font-bold text-sm">Coverages</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="service-details.html" class="hover:text-amber-400 transition-colors">Commercial Property</a></li>
+            <li><a href="services.html" class="hover:text-amber-400 transition-colors">General Liability</a></li>
+            <li><a href="services.html" class="hover:text-amber-400 transition-colors">Business Interruption</a></li>
+            <li><a href="services.html" class="hover:text-amber-400 transition-colors">Equipment & Machinery</a></li>
+            <li><a href="services.html" class="hover:text-amber-400 transition-colors">Flood & Earthquake</a></li>
+            <li><a href="services.html" class="hover:text-amber-400 transition-colors">Landlord & Multi-Family</a></li>
+            <li><a href="services.html" class="hover:text-amber-400 transition-colors">Risk Assessment Advisory</a></li>
+            <li><a href="services.html" class="hover:text-amber-400 transition-colors">Claims Advocacy</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="space-y-3">
+          <h4 class="text-white font-bold text-sm">Platform Navigation</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="index.html" class="hover:text-amber-400 transition-colors">Home Page 1 (General)</a></li>
+            <li><a href="home-2.html" class="hover:text-amber-400 transition-colors">Home Page 2 (CRE Niche)</a></li>
+            <li><a href="about.html" class="hover:text-amber-400 transition-colors">About Our Firm</a></li>
+            <li><a href="pricing.html" class="hover:text-amber-400 transition-colors">Pricing & Packages</a></li>
+            <li><a href="blog.html" class="hover:text-amber-400 transition-colors">Risk Intelligence Blog</a></li>
+            <li><a href="contact.html" class="hover:text-amber-400 transition-colors">Contact Underwriting</a></li>
+          </ul>
+        </div>
+
+        <!-- Headquarters, Newsletter & Emergency Claims -->
+        <div class="space-y-3">
+          <h4 class="text-white font-bold text-sm">Headquarters & Claims</h4>
+          <div class="space-y-2 text-xs">
+            <div class="flex items-start">
+              <i class="fa-solid fa-location-dot text-amber-500 mt-0.5 mr-2"></i>
+              <span>350 Fifth Avenue, 44th Floor, New York, NY 10118</span>
+            </div>
+            <div class="flex items-center">
+              <i class="fa-solid fa-phone text-amber-500 mr-2"></i>
+              <a href="tel:18005557475" class="hover:text-amber-400">+1 (800) 555-7475</a>
+            </div>
+            <div class="flex items-center">
+              <i class="fa-solid fa-envelope text-amber-500 mr-2"></i>
+              <a href="mailto:brokerage@shieldora.com" class="hover:text-amber-400">brokerage@shieldora.com</a>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900 border border-slate-800 mt-2">
+              <div class="text-[11px] font-bold text-white flex items-center">
+                <i class="fa-solid fa-triangle-exclamation text-amber-400 mr-1.5"></i> 24/7 Urgent Claims
+              </div>
+              <div class="text-xs text-amber-400 font-bold mt-1">
+                <a href="tel:18005557475" class="hover:underline">1-800-555-RISK</a>
+              </div>
+            </div>
+
+            <!-- Newsletter form -->
+            <form class="newsletter-form pt-2 space-y-1.5">
+              <div class="text-[11px] font-semibold text-slate-300">Subscribe to Risk Briefings:</div>
+              <div class="flex">
+                <input type="email" required placeholder="executive@company.com" class="input-field px-3 py-1.5 rounded-l-lg bg-slate-900 border border-slate-700 text-white text-[11px] placeholder-slate-500 focus:outline-none w-full">
+                <button type="submit" class="px-3 py-1.5 rounded-r-lg bg-gradient-gold text-white font-bold text-[11px] hover:brightness-105 shrink-0">
+                  <i class="fa-solid fa-paper-plane"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Legal Disclaimer & Copyright -->
+      <div class="pt-8 flex flex-col md:flex-row justify-between items-center text-[11px] text-slate-500 space-y-4 md:space-y-0">
+        <div>
+          &copy; 2026 Shieldora Risk Solutions Inc. All rights reserved. Protecting Your Property. Securing Your Future.
+        </div>
+        <div class="flex space-x-4">
+          <a href="contact.html#regulatory" class="hover:text-slate-400">Privacy Policy</a>
+          <a href="contact.html#regulatory" class="hover:text-slate-400">Terms of Brokerage</a>
+          <a href="contact.html#regulatory" class="hover:text-slate-400">Regulatory Disclosures</a>
+        </div>
+      </div>
+      <div class="mt-4 text-[10px] text-slate-600 text-center md:text-left leading-relaxed">
+        Disclaimer: Information presented is for illustrative educational purposes. Insurance coverage and binding require formal underwriter review, COPE verification, and carrier policy contracts.
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/forms.js"></script>
+  <!-- GLOBAL QUICK QUOTE MODAL -->
+  <div id="global-quote-modal" class="fixed inset-0 z-50 modal-backdrop hidden items-center justify-center p-4">
+    <div class="bg-white dark:bg-slate-800 rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-slate-200 dark:border-slate-700 relative max-h-[90vh] overflow-y-auto">
+      
+      <button class="close-quote-modal absolute top-5 right-5 text-slate-400 hover:text-slate-600 dark:hover:text-white text-lg" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="flex items-center space-x-3 mb-5">
+        <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-lg">
+          <i class="fa-solid fa-file-shield"></i>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white">Commercial Quote Request</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Multi-carrier comparison within 24 hours</p>
+        </div>
+      </div>
+
+      <form id="quick-quote-form" class="space-y-4 text-xs font-semibold">
+        <div>
+          <label class="block mb-1 text-slate-700 dark:text-slate-300">Coverage Type Required</label>
+          <select id="quote-service-select" name="propertyType" class="input-field w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 text-sm focus:outline-none">
+            <option value="Commercial Property Insurance">Commercial Property Insurance</option>
+            <option value="Commercial General Liability">Commercial General Liability</option>
+            <option value="Business Interruption & Income">Business Interruption & Income</option>
+            <option value="Equipment & Machinery Breakdown">Equipment & Machinery Breakdown</option>
+            <option value="Fire, Flood & Disaster Coverage">Fire, Flood & Disaster Coverage</option>
+            <option value="Commercial Real Estate Portfolio">Comprehensive Commercial Real Estate Portfolio</option>
+          </select>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block mb-1 text-slate-700 dark:text-slate-300">Estimated Building Value</label>
+            <select name="propertyValue" class="input-field w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 text-sm focus:outline-none">
+              <option value="$1M - $3M">$1M – $3M</option>
+              <option value="$3M - $10M" selected>$3M – $10M</option>
+              <option value="$10M - $30M">$10M – $30M</option>
+              <option value="$30M - $100M+">$30M – $100M+</option>
+            </select>
+          </div>
+          <div>
+            <label class="block mb-1 text-slate-700 dark:text-slate-300">Property Zip Code</label>
+            <input type="text" name="zipCode" required placeholder="e.g. 10001" class="input-field w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 text-sm focus:outline-none">
+          </div>
+        </div>
+
+        <div>
+          <label class="block mb-1 text-slate-700 dark:text-slate-300">Company / Entity Name</label>
+          <input type="text" name="companyName" required placeholder="e.g. Horizon Real Estate Holdings LLC" class="input-field w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 text-sm focus:outline-none">
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block mb-1 text-slate-700 dark:text-slate-300">Business Email</label>
+            <input type="email" name="businessEmail" required placeholder="name@company.com" class="input-field w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 text-sm focus:outline-none">
+          </div>
+          <div>
+            <label class="block mb-1 text-slate-700 dark:text-slate-300">Contact Phone</label>
+            <input type="tel" name="phone" placeholder="(555) 000-0000" class="input-field w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 text-sm focus:outline-none">
+          </div>
+        </div>
+
+        <div class="pt-2">
+          <button type="submit" class="w-full py-3.5 rounded-xl font-bold text-sm text-white bg-gradient-gold shadow-lg hover:shadow-xl hover:brightness-105 transition-all">
+            <i class="fa-solid fa-paper-plane mr-2"></i> Submit For Carrier Review
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

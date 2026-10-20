@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Portal Dashboard | Shieldora Risk Solutions</title>
+  <!-- Site Favicon & Touch Icons -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo-icon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <meta name="description" content="Manage your commercial property policies, compare multi-carrier quotes, track claims progress, and download certificates of insurance in the Shieldora Client Portal.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#0A192F',
+              'navy-dark': '#060D17',
+              'navy-light': '#1E293B',
+              blue: '#1E40AF',
+              gold: '#D97706',
+              'gold-light': '#FEF3C7',
+              'gold-hover': '#B45309',
+              steel: '#64748B'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '"Inter"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <link rel="stylesheet" href="assets/css/style.css?v=20261015-v5">
+  <script>
+    (function () {
+      try {
+        const savedTheme = localStorage.getItem('shieldora_theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+        const savedDir = localStorage.getItem('shieldora-direction') || localStorage.getItem('shieldora_dir') || 'ltr';
+        document.documentElement.setAttribute('dir', savedDir);
+        document.documentElement.setAttribute('lang', savedDir === 'rtl' ? 'ar' : 'en');
+        document.documentElement.dir = savedDir;
+        document.documentElement.lang = savedDir === 'rtl' ? 'ar' : 'en';
+        if (savedDir === 'rtl') {
+          document.documentElement.classList.add('rtl-layout');
+        }
+        const savedAg = localStorage.getItem('shieldora-antigravity') === 'true' || localStorage.getItem('shieldora_antigravity') === 'true';
+        if (savedAg) {
+          document.documentElement.classList.add('anti-gravity-enabled');
+          document.documentElement.classList.add('anti-gravity');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <!-- Guaranteed Full-Width Navbar & Card Alignment Protection -->
+  <style id="critical-layout-protection">
+    header,
+    header.main-navbar,
+    .main-navbar {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    .navbar-container {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      padding-left: 40px !important;
+      padding-right: 40px !important;
+      padding-top: 15px !important;
+      padding-bottom: 15px !important;
+      box-sizing: border-box !important;
+    }
+    @media (max-width: 1279px) and (min-width: 1024px) {
+      .navbar-container {
+        padding-left: 32px !important;
+        padding-right: 32px !important;
+      }
+    }
+    @media (max-width: 1023px) {
+      .navbar-container {
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+      }
+    }
+    @media (max-width: 639px) {
+      .navbar-container {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+      }
+    }
+    footer > div,
+    footer .footer-container {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding-left: 40px !important;
+      padding-right: 40px !important;
+      box-sizing: border-box !important;
+    }
+    @media (max-width: 1279px) and (min-width: 1024px) {
+      footer > div,
+      footer .footer-container {
+        padding-left: 32px !important;
+        padding-right: 32px !important;
+      }
+    }
+    @media (max-width: 1023px) {
+      footer > div,
+      footer .footer-container {
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+      }
+    }
+    @media (max-width: 639px) {
+      footer > div,
+      footer .footer-container {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+      }
+    }
+    .insurance-card {
+      width: 100% !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+    }
+    .insurance-card > a.block,
+    .insurance-card > div.relative {
+      height: 200px !important;
+      max-height: 200px !important;
+      overflow: hidden !important;
+      display: block !important;
+      position: relative !important;
+    }
+    .insurance-card img {
+      width: 100% !important;
+      height: 100% !important;
+      max-height: 200px !important;
+      object-fit: cover !important;
+    }
+  </style>
+</head>
+<body class="bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col font-sans transition-colors duration-300">
+
+  <!-- TOP DASHBOARD BAR -->
+  <header class="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 sticky top-0 z-40">
+    <div class="px-4 sm:px-6 lg:px-8 flex justify-between items-center h-[72px] min-h-[72px]">
+      
+      <div class="flex items-center space-x-3">
+        <!-- Sidebar Toggle (Mobile) -->
+        <button id="sidebar-toggle-btn" class="lg:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 focus:outline-none" aria-label="Toggle Navigation">
+          <i class="fa-solid fa-bars text-lg"></i>
+        </button>
+
+        <!-- Brand Logo -->
+        <a href="index.html" class="site-brand flex items-center flex-shrink-0 focus:outline-none" aria-label="Shieldora Risk Solutions Home">
+          <img src="assets/images/logo-icon.svg" alt="Shieldora Risk Solutions Logo" class="brand-logo w-10 h-10 object-contain flex-shrink-0" width="40" height="40">
+          <div class="brand-name flex flex-col justify-center min-w-0">
+            <span class="brand-title font-extrabold text-base sm:text-lg tracking-tight leading-none text-brand-navy dark:text-white">SHIELDORA</span>
+            <span class="brand-subtitle text-[9px] sm:text-[10px] font-bold tracking-widest leading-tight text-amber-500 uppercase mt-0.5">CLIENT PORTAL</span>
+          </div>
+        </a>
+
+        <span class="hidden sm:inline-block px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-emerald-100 text-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-300">
+          Demo Client Active
+        </span>
+      </div>
+
+      <!-- Right Actions: RTL, Theme, Notifications, User Menu -->
+      <div class="flex items-center space-x-2 sm:space-x-3">
+        <!-- RTL Toggle (Text Only) -->
+        <button type="button" class="rtl-toggle-btn text-xs font-semibold px-2.5 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:border-amber-500 hover:text-amber-500 transition-colors" aria-label="Toggle Direction" title="Switch text direction">
+          <span class="rtl-toggle-label">RTL</span>
+        </button>
+
+        <!-- Theme Toggle (Icon Only) -->
+        <button type="button" class="theme-toggle-btn p-2 text-slate-500 dark:text-slate-400 hover:text-amber-500 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors" aria-label="Switch theme" title="Switch theme">
+          <i class="theme-toggle-icon fa-solid fa-moon text-sm"></i>
+        </button>
+
+        <!-- Notifications -->
+        <button data-jump-tab="notifications" class="relative p-2 text-slate-500 dark:text-slate-400 hover:text-amber-500 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700">
+          <i class="fa-solid fa-bell text-base"></i>
+          <span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-amber-500"></span>
+        </button>
+
+        <!-- User Profile Pill -->
+        <div class="flex items-center space-x-2 pl-2 border-l border-slate-200 dark:border-slate-700">
+          <div class="w-8 h-8 rounded-full bg-amber-500 text-white font-bold flex items-center justify-center text-xs">
+            SC
+          </div>
+          <div class="hidden sm:block text-left text-xs leading-tight">
+            <div id="client-name-display" class="font-bold text-slate-900 dark:text-white">Sarah Connor</div>
+            <div id="client-company-display" class="text-[11px] text-slate-400 truncate max-w-[140px]">Skyline Holdings LLC</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </header>
+
+  <!-- DASHBOARD WRAPPER -->
+  <div class="flex-1 flex overflow-hidden relative">
+    
+    <!-- Mobile Overlay -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-slate-900/60 z-30 hidden lg:hidden"></div>
+
+    <!-- COLLAPSIBLE SIDEBAR -->
+    <aside id="dashboard-sidebar" class="w-72 bg-brand-navy-dark text-slate-300 flex flex-col justify-between shrink-0 fixed inset-y-0 left-0 pt-16 lg:pt-0 z-30 transform -translate-x-full lg:translate-x-0 lg:static transition-transform duration-300 border-r border-slate-800">
+      
+      <div class="p-4 overflow-y-auto">
+        <div class="text-[10px] uppercase font-bold text-slate-400 tracking-wider px-3 mb-2">Portfolio Management</div>
+        
+        <nav class="space-y-1 text-xs font-semibold">
+          <a href="#overview" data-tab="overview" class="dashboard-nav-item flex items-center justify-between px-3.5 py-3 rounded-xl transition-colors whitespace-nowrap">
+            <div class="flex items-center min-w-0">
+              <i class="fa-solid fa-gauge-high w-5 text-center mr-3 text-sm shrink-0"></i>
+              <span>Dashboard Overview</span>
+            </div>
+          </a>
+          <a href="#policies" data-tab="policies" class="dashboard-nav-item flex items-center justify-between px-3.5 py-3 rounded-xl transition-colors whitespace-nowrap">
+            <div class="flex items-center min-w-0">
+              <i class="fa-solid fa-building-shield w-5 text-center mr-3 text-sm shrink-0"></i>
+              <span>My Policies</span>
+            </div>
+            <span class="ml-2 px-2.5 py-0.5 rounded-full text-[10px] bg-slate-800 font-bold text-slate-300 shrink-0 whitespace-nowrap">4</span>
+          </a>
+          <a href="#compare-quotes" data-tab="compare-quotes" class="dashboard-nav-item flex items-center justify-between px-3.5 py-3 rounded-xl transition-colors whitespace-nowrap">
+            <div class="flex items-center min-w-0">
+              <i class="fa-solid fa-scale-balanced w-5 text-center mr-3 text-sm shrink-0"></i>
+              <span>Compare Quotes</span>
+            </div>
+            <span class="ml-2 px-2.5 py-0.5 rounded-full text-[10px] bg-amber-500/20 text-amber-400 font-bold shrink-0 whitespace-nowrap">3 Active</span>
+          </a>
+          <a href="#claims" data-tab="claims" class="dashboard-nav-item flex items-center justify-between px-3.5 py-3 rounded-xl transition-colors whitespace-nowrap">
+            <div class="flex items-center min-w-0">
+              <i class="fa-solid fa-handshake-angle w-5 text-center mr-3 text-sm shrink-0"></i>
+              <span>Tracking Claims Status</span>
+            </div>
+            <span class="ml-2 px-2.5 py-0.5 rounded-full text-[10px] bg-blue-500/20 text-blue-400 font-bold shrink-0 whitespace-nowrap">1 Open</span>
+          </a>
+          <a href="#documents" data-tab="documents" class="dashboard-nav-item flex items-center justify-between px-3.5 py-3 rounded-xl transition-colors whitespace-nowrap">
+            <div class="flex items-center min-w-0">
+              <i class="fa-solid fa-file-pdf w-5 text-center mr-3 text-sm shrink-0"></i>
+              <span>Policy Documents</span>
+            </div>
+          </a>
+          <a href="#payments" data-tab="payments" class="dashboard-nav-item flex items-center justify-between px-3.5 py-3 rounded-xl transition-colors whitespace-nowrap">
+            <div class="flex items-center min-w-0">
+              <i class="fa-solid fa-credit-card w-5 text-center mr-3 text-sm shrink-0"></i>
+              <span>Payments & Billing</span>
+            </div>
+          </a>
+          <a href="#notifications" data-tab="notifications" class="dashboard-nav-item flex items-center justify-between px-3.5 py-3 rounded-xl transition-colors whitespace-nowrap">
+            <div class="flex items-center min-w-0">
+              <i class="fa-solid fa-bell w-5 text-center mr-3 text-sm shrink-0"></i>
+              <span>Notifications</span>
+            </div>
+            <span class="ml-2 px-2.5 py-0.5 rounded-full text-[10px] bg-amber-500 text-white font-bold shrink-0 whitespace-nowrap">2</span>
+          </a>
+          <a href="#profile" data-tab="profile" class="dashboard-nav-item flex items-center justify-between px-3.5 py-3 rounded-xl transition-colors whitespace-nowrap">
+            <div class="flex items-center min-w-0">
+              <i class="fa-solid fa-user-gear w-5 text-center mr-3 text-sm shrink-0"></i>
+              <span>Profile & Settings</span>
+            </div>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Logout Button -->
+      <div class="p-4 border-t border-slate-800">
+        <a href="login.html" onclick="localStorage.removeItem('shieldora_auth_user');" class="flex items-center text-xs font-semibold text-rose-400 hover:text-rose-300 py-2 px-3 rounded-xl hover:bg-slate-800 transition-colors">
+          <i class="fa-solid fa-arrow-right-from-bracket mr-3 text-sm"></i> Sign Out
+        </a>
+      </div>
+
+    </aside>
+
+    <!-- MAIN DASHBOARD CONTENT AREA -->
+    <main class="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8">
+      
+      <!-- ================= SECTION 1: OVERVIEW ================= -->
+      <section id="section-overview" class="dashboard-section space-y-8">
+        
+        <!-- Welcome Banner -->
+        <div class="hero-page-section bg-slate-50 dark:bg-gradient-navy text-slate-900 dark:text-white p-6 sm:p-8 rounded-3xl relative overflow-hidden shadow-lg border border-slate-200 dark:border-slate-700/60">
+          <!-- Banner Background Image with Directional Overlay -->
+          <div class="hero-bg-container absolute inset-0 z-0 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=2400&q=85" alt="Sarah Connor commercial property holdings skyline" class="hero-bg-img object-cover">
+            <div class="hero-directional-overlay absolute inset-0 bg-gradient-to-r"></div>
+            <div class="absolute inset-0 hero-pattern opacity-20 dark:opacity-30"></div>
+          </div>
+          <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div>
+              <span class="text-amber-400 text-xs font-extrabold uppercase tracking-wider">Commercial Property Portfolio</span>
+              <h1 class="text-2xl sm:text-3xl font-extrabold mt-1">Welcome back, Sarah Connor</h1>
+              <p class="text-slate-600 dark:text-slate-300 text-xs mt-1 font-medium">Skyline Commercial Holdings LLC • 4 Active Locations Protected</p>
+            </div>
+            <div class="flex items-center space-x-3">
+              <button data-jump-tab="compare-quotes" class="px-4 py-2.5 rounded-xl font-bold text-xs bg-amber-500 text-white hover:bg-amber-600 transition-all shadow-md">
+                <i class="fa-solid fa-scale-balanced mr-1.5"></i> Review 3 New Carrier Quotes
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Metric Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm flex items-center justify-between">
+            <div>
+              <div class="text-xs font-bold text-slate-500 uppercase tracking-wider">Active Policies</div>
+              <div class="text-3xl font-extrabold text-slate-900 dark:text-white mt-1">4</div>
+              <div class="text-[11px] text-emerald-500 font-bold mt-1"><i class="fa-solid fa-circle-check"></i> $46M Total Insured Value</div>
+            </div>
+            <div class="w-12 h-12 rounded-2xl bg-brand-navy/10 dark:bg-brand-navy-light text-brand-navy dark:text-blue-400 flex items-center justify-center text-xl">
+              <i class="fa-solid fa-building-shield"></i>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm flex items-center justify-between">
+            <div>
+              <div class="text-xs font-bold text-slate-500 uppercase tracking-wider">Pending Quotes</div>
+              <div class="text-3xl font-extrabold text-amber-500 mt-1">3</div>
+              <div class="text-[11px] text-amber-600 dark:text-amber-400 font-bold mt-1">Multi-carrier comparison ready</div>
+            </div>
+            <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-xl">
+              <i class="fa-solid fa-file-invoice-dollar"></i>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm flex items-center justify-between">
+            <div>
+              <div class="text-xs font-bold text-slate-500 uppercase tracking-wider">Open Claims</div>
+              <div class="text-3xl font-extrabold text-blue-500 mt-1">1</div>
+              <div class="text-[11px] text-blue-600 dark:text-blue-400 font-bold mt-1">Adjuster review scheduled</div>
+            </div>
+            <div class="w-12 h-12 rounded-2xl bg-blue-500/10 text-blue-500 flex items-center justify-center text-xl">
+              <i class="fa-solid fa-handshake-angle"></i>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm flex items-center justify-between">
+            <div>
+              <div class="text-xs font-bold text-slate-500 uppercase tracking-wider">Upcoming Renewals</div>
+              <div class="text-3xl font-extrabold text-slate-900 dark:text-white mt-1">45 Days</div>
+              <div class="text-[11px] text-slate-400 font-semibold mt-1">Metro Tower • Jan 01, 2027</div>
+            </div>
+            <div class="w-12 h-12 rounded-2xl bg-purple-500/10 text-purple-500 flex items-center justify-center text-xl">
+              <i class="fa-solid fa-calendar-check"></i>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Charts Grid (Coverage Doughnut & Premium Bar) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          
+          <div class="lg:col-span-6 bg-white dark:bg-slate-800 p-6 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm">
+            <div class="flex justify-between items-center mb-4">
+              <h3 class="font-extrabold text-sm text-slate-900 dark:text-white">Portfolio Coverage Allocation ($66M Total)</h3>
+              <span class="text-xs text-slate-400">By Line</span>
+            </div>
+            <div class="h-64 relative">
+              <canvas id="client-coverage-chart"></canvas>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6 bg-white dark:bg-slate-800 p-6 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm">
+            <div class="flex justify-between items-center mb-4">
+              <h3 class="font-extrabold text-sm text-slate-900 dark:text-white">Annual Premium vs Claim Recoveries ($k)</h3>
+              <span class="text-xs text-slate-400">YTD 2026</span>
+            </div>
+            <div class="h-64 relative">
+              <canvas id="client-claims-chart"></canvas>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Recent Activity Feed -->
+        <div class="bg-white dark:bg-slate-800 p-6 sm:p-8 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm space-y-4">
+          <div class="flex justify-between items-center border-b border-slate-100 dark:border-slate-700 pb-4">
+            <h3 class="font-extrabold text-base text-slate-900 dark:text-white">Recent Account Activity</h3>
+            <span class="text-xs text-slate-400">Last 7 Days</span>
+          </div>
+
+          <div class="space-y-4 text-xs">
+            <div class="flex items-start space-x-3">
+              <div class="w-8 h-8 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-file-circle-check"></i>
+              </div>
+              <div class="flex-1">
+                <div class="font-bold text-slate-800 dark:text-slate-200">ACORD 25 Certificate of Insurance Issued</div>
+                <div class="text-slate-500">Issued to lender JP Morgan Chase for Midtown Executive Tower policy #SHLD-2024-NY-891.</div>
+              </div>
+              <div class="text-[11px] text-slate-400">Today, 10:14 AM</div>
+            </div>
+
+            <div class="flex items-start space-x-3">
+              <div class="w-8 h-8 rounded-full bg-amber-500/10 text-amber-500 flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+              </div>
+              <div class="flex-1">
+                <div class="font-bold text-slate-800 dark:text-slate-200">3 Underwriter Renewal Quotes Received</div>
+                <div class="text-slate-500">Chubb, Travelers, and AIG submitted competing bids for the Oakridge Distribution Hub.</div>
+              </div>
+              <div class="text-[11px] text-slate-400">Yesterday, 3:45 PM</div>
+            </div>
+
+            <div class="flex items-start space-x-3">
+              <div class="w-8 h-8 rounded-full bg-blue-500/10 text-blue-500 flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-clipboard-check"></i>
+              </div>
+              <div class="flex-1">
+                <div class="font-bold text-slate-800 dark:text-slate-200">Claim Status Updated: Adjuster Assigned</div>
+                <div class="text-slate-500">Claim #CLM-8921-2026 (Oakridge Hub Water Intrusion) assigned to Crawford & Company.</div>
+              </div>
+              <div class="text-[11px] text-slate-400">Oct 09, 2026</div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ================= SECTION 2: MY POLICIES ================= -->
+      <section id="section-policies" class="dashboard-section hidden space-y-6">
+        
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <h2 class="text-2xl font-extrabold text-slate-900 dark:text-white">Commercial Insurance Policies</h2>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Active and pending property risk contracts under management</p>
+          </div>
+          <button data-open-quote-modal class="px-5 py-2.5 rounded-xl font-bold text-xs text-white bg-gradient-gold shadow hover:brightness-105">
+            <i class="fa-solid fa-plus mr-1.5"></i> Add New Location / Policy
+          </button>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs">
+              <thead>
+                <tr class="bg-slate-50 dark:bg-slate-900/60 border-b border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400">
+                  <th class="p-4 font-bold uppercase tracking-wider">Policy Ref</th>
+                  <th class="p-4 font-bold uppercase tracking-wider">Property Name / Location</th>
+                  <th class="p-4 font-bold uppercase tracking-wider">Coverage Line</th>
+                  <th class="p-4 font-bold uppercase tracking-wider">Limit of Insurance</th>
+                  <th class="p-4 font-bold uppercase tracking-wider">Effective Term</th>
+                  <th class="p-4 font-bold uppercase tracking-wider">Status</th>
+                  <th class="p-4 font-bold uppercase tracking-wider text-right">Actions</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 dark:divide-slate-700 text-slate-700 dark:text-slate-300">
+                
+                <!-- Policy 1 -->
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                  <td class="p-4 font-mono font-bold text-amber-600 dark:text-amber-400">SHLD-2024-NY-891</td>
+                  <td class="p-4">
+                    <div class="font-bold text-slate-900 dark:text-white">Midtown Executive Tower</div>
+                    <div class="text-[11px] text-slate-400">350 5th Avenue, New York, NY (42 Stories)</div>
+                  </td>
+                  <td class="p-4">Special Form All-Risk Property</td>
+                  <td class="p-4 font-bold text-slate-900 dark:text-white">$25,000,000</td>
+                  <td class="p-4 text-[11px]">Jan 01, 2026 – Jan 01, 2027</td>
+                  <td class="p-4">
+                    <span class="px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-emerald-100 text-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-300">
+                      Active
+                    </span>
+                  </td>
+                  <td class="p-4 text-right space-x-2">
+                    <button data-preview-doc data-doc-name="Midtown Executive Tower Policy" data-doc-policy="SHLD-2024-NY-891" class="text-blue-600 dark:text-blue-400 hover:underline font-bold">
+                      View
+                    </button>
+                    <button data-download-doc data-doc-name="COI-Midtown-Tower" class="text-amber-600 dark:text-amber-400 hover:underline font-bold">
+                      COI PDF
+                    </button>
+                  </td>
+                </tr>
+
+                <!-- Policy 2 -->
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                  <td class="p-4 font-mono font-bold text-amber-600 dark:text-amber-400">SHLD-2025-IL-402</td>
+                  <td class="p-4">
+                    <div class="font-bold text-slate-900 dark:text-white">Oakridge Distribution Logistics Hub</div>
+                    <div class="text-[11px] text-slate-400">1200 Logistics Pkwy, Joliet, IL (550,000 sq ft)</div>
+                  </td>
+                  <td class="p-4">Commercial Property & ESFR Leakage</td>
+                  <td class="p-4 font-bold text-slate-900 dark:text-white">$14,500,000</td>
+                  <td class="p-4 text-[11px]">Mar 15, 2026 – Mar 15, 2027</td>
+                  <td class="p-4">
+                    <span class="px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-emerald-100 text-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-300">
+                      Active
+                    </span>
+                  </td>
+                  <td class="p-4 text-right space-x-2">
+                    <button data-preview-doc data-doc-name="Oakridge Hub Policy" data-doc-policy="SHLD-2025-IL-402" class="text-blue-600 dark:text-blue-400 hover:underline font-bold">
+                      View
+                    </button>
+                    <button data-download-doc data-doc-name="COI-Oakridge-Hub" class="text-amber-600 dark:text-amber-400 hover:underline font-bold">
+                      COI PDF
+                    </button>
+                  </td>
+                </tr>
+
+                <!-- Policy 3 -->
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                  <td class="p-4 font-mono font-bold text-amber-600 dark:text-amber-400">SHLD-2025-TX-911</td>
+                  <td class="p-4">
+                    <div class="font-bold text-slate-900 dark:text-white">Memorial Galleria Retail Plaza</div>
+                    <div class="text-[11px] text-slate-400">8400 Westheimer Rd, Houston, TX (28 Tenants)</div>
+                  </td>
+                  <td class="p-4">Commercial Property & Hurricane Layer</td>
+                  <td class="p-4 font-bold text-slate-900 dark:text-white">$18,000,000</td>
+                  <td class="p-4 text-[11px]">Nov 01, 2025 – Nov 01, 2026</td>
+                  <td class="p-4">
+                    <span class="px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-amber-100 text-amber-800 dark:bg-amber-950/40 dark:text-amber-300">
+                      Pending Renewal
+                    </span>
+                  </td>
+                  <td class="p-4 text-right space-x-2">
+                    <button data-preview-doc data-doc-name="Memorial Galleria Policy" data-doc-policy="SHLD-2025-TX-911" class="text-blue-600 dark:text-blue-400 hover:underline font-bold">
+                      View
+                    </button>
+                    <button data-download-doc data-doc-name="COI-Memorial-Galleria" class="text-amber-600 dark:text-amber-400 hover:underline font-bold">
+                      COI PDF
+                    </button>
+                  </td>
+                </tr>
+
+                <!-- Policy 4 -->
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                  <td class="p-4 font-mono font-bold text-amber-600 dark:text-amber-400">SHLD-2024-GL-311</td>
+                  <td class="p-4">
+                    <div class="font-bold text-slate-900 dark:text-white">Commercial General Umbrella Tower</div>
+                    <div class="text-[11px] text-slate-400">Blanket Portfolio Liability (All Locations)</div>
+                  </td>
+                  <td class="p-4">Commercial General Liability & Umbrella</td>
+                  <td class="p-4 font-bold text-slate-900 dark:text-white">$25,000,000 Excess</td>
+                  <td class="p-4 text-[11px]">Jan 01, 2026 – Jan 01, 2027</td>
+                  <td class="p-4">
+                    <span class="px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-emerald-100 text-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-300">
+                      Active
+                    </span>
+                  </td>
+                  <td class="p-4 text-right space-x-2">
+                    <button data-preview-doc data-doc-name="Blanket Umbrella Policy" data-doc-policy="SHLD-2024-GL-311" class="text-blue-600 dark:text-blue-400 hover:underline font-bold">
+                      View
+                    </button>
+                    <button data-download-doc data-doc-name="COI-Umbrella-Coverage" class="text-amber-600 dark:text-amber-400 hover:underline font-bold">
+                      COI PDF
+                    </button>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ================= SECTION 3: COMPARE QUOTES ================= -->
+      <section id="section-compare-quotes" class="dashboard-section hidden space-y-6">
+        
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <h2 class="text-2xl font-extrabold text-slate-900 dark:text-white">Multi-Carrier Quote Comparison</h2>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Active market quotes for Oakridge Logistics Hub renewal ($15M Replacement Value)</p>
+          </div>
+          <div class="flex items-center space-x-3">
+            <label class="flex items-center text-xs font-bold text-slate-700 dark:text-slate-300 cursor-pointer">
+              <input type="checkbox" id="highlight-quote-diffs-toggle" class="text-amber-500 rounded mr-2">
+              <span>Highlight Coverage Differences</span>
+            </label>
+            <button id="request-advisor-review-btn" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors">
+              <i class="fa-solid fa-phone mr-1"></i> Request Advisor Call
+            </button>
+          </div>
+        </div>
+
+        <!-- 3 Side-by-Side Comparison Cards / Table -->
+        <div class="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-xl overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs">
+              <thead>
+                <tr class="bg-slate-50 dark:bg-slate-900/60 border-b border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400">
+                  <th class="p-5 font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 w-1/4">Underwriting Category</th>
+                  <th class="p-5 font-extrabold text-brand-navy dark:text-blue-400 w-1/4 text-sm">
+                    CHUBB (Lead Syndicate)
+                    <div class="text-[11px] font-normal text-slate-400">A++ Superior • Admitted</div>
+                  </th>
+                  <th class="p-5 font-extrabold text-amber-600 dark:text-amber-400 w-1/4 text-sm bg-amber-500/5">
+                    TRAVELERS (Recommended)
+                    <div class="text-[11px] font-normal text-slate-400">A+ Superior • Admitted</div>
+                  </th>
+                  <th class="p-5 font-extrabold text-slate-700 dark:text-slate-200 w-1/4 text-sm">
+                    AIG COMMERCIAL
+                    <div class="text-[11px] font-normal text-slate-400">A Excellent • Admitted</div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 dark:divide-slate-700 text-slate-700 dark:text-slate-300">
+                <tr class="quote-diff-highlight transition-colors">
+                  <td class="p-4 font-bold text-slate-900 dark:text-white">Annual Net Premium</td>
+                  <td class="p-4 font-bold text-base text-slate-900 dark:text-white">$34,800 / yr</td>
+                  <td class="p-4 font-black text-lg text-emerald-600 dark:text-emerald-400 bg-amber-500/5">$31,250 / yr (-10%)</td>
+                  <td class="p-4 font-bold text-base text-slate-900 dark:text-white">$36,100 / yr</td>
+                </tr>
+                <tr>
+                  <td class="p-4 font-bold text-slate-900 dark:text-white">Building All-Risk Limit</td>
+                  <td class="p-4">$15,000,000</td>
+                  <td class="p-4 font-bold text-slate-900 dark:text-white bg-amber-500/5">$15,000,000</td>
+                  <td class="p-4">$15,000,000</td>
+                </tr>
+                <tr class="quote-diff-highlight transition-colors">
+                  <td class="p-4 font-bold text-slate-900 dark:text-white">All Perils Deductible</td>
+                  <td class="p-4">$25,000 per loss</td>
+                  <td class="p-4 font-bold text-amber-500 bg-amber-500/5">$15,000 per loss</td>
+                  <td class="p-4">$25,000 per loss</td>
+                </tr>
+                <tr class="quote-diff-highlight transition-colors">
+                  <td class="p-4 font-bold text-slate-900 dark:text-white">Windstorm / Hail Deductible</td>
+                  <td class="p-4">2% ($300k Minimum)</td>
+                  <td class="p-4 font-bold text-amber-500 bg-amber-500/5">1% ($150k Minimum)</td>
+                  <td class="p-4">2% ($300k Minimum)</td>
+                </tr>
+                <tr>
+                  <td class="p-4 font-bold text-slate-900 dark:text-white">Coinsurance / Valuation</td>
+                  <td class="p-4 font-bold text-emerald-500">Agreed Value (0% Penalty)</td>
+                  <td class="p-4 font-bold text-emerald-500 bg-amber-500/5">Agreed Value (0% Penalty)</td>
+                  <td class="p-4 font-bold text-emerald-500">Agreed Value (0% Penalty)</td>
+                </tr>
+                <tr class="quote-diff-highlight transition-colors">
+                  <td class="p-4 font-bold text-slate-900 dark:text-white">Business Income Limit</td>
+                  <td class="p-4">12 Months ($3M ALS)</td>
+                  <td class="p-4 font-bold text-amber-500 bg-amber-500/5">18 Months ($4.5M ALS)</td>
+                  <td class="p-4">12 Months ($3M ALS)</td>
+                </tr>
+                <tr class="quote-diff-highlight transition-colors">
+                  <td class="p-4 font-bold text-slate-900 dark:text-white">Ordinance or Law Upgrade</td>
+                  <td class="p-4">25% Building Sub-limit</td>
+                  <td class="p-4 font-bold text-amber-500 bg-amber-500/5">Full Building Limit Included</td>
+                  <td class="p-4">10% Building Sub-limit</td>
+                </tr>
+                <tr>
+                  <td class="p-4 font-bold text-slate-900 dark:text-white">Action / Binding</td>
+                  <td class="p-4">
+                    <button class="bind-quote-btn px-4 py-2 rounded-xl text-xs font-bold border border-slate-300 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-700" data-carrier="Chubb" data-quote-id="Q-CHUBB-901">
+                      Bind Chubb Policy
+                    </button>
+                  </td>
+                  <td class="p-4 bg-amber-500/5">
+                    <button class="bind-quote-btn px-5 py-2.5 rounded-xl text-xs font-extrabold text-white bg-gradient-gold shadow-md hover:brightness-105" data-carrier="Travelers" data-quote-id="Q-TRAV-882">
+                      <i class="fa-solid fa-check-circle mr-1"></i> Bind Travelers (Best Value)
+                    </button>
+                  </td>
+                  <td class="p-4">
+                    <button class="bind-quote-btn px-4 py-2 rounded-xl text-xs font-bold border border-slate-300 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-700" data-carrier="AIG" data-quote-id="Q-AIG-773">
+                      Bind AIG Policy
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ================= SECTION 4: TRACKING CLAIMS STATUS ================= -->
+      <section id="section-claims" class="dashboard-section hidden space-y-6">
+        
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <h2 class="text-2xl font-extrabold text-slate-900 dark:text-white">Tracking Claims Status & Advocacy</h2>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Track claim progress timelines and submit incident first notices</p>
+          </div>
+          <button id="open-file-claim-modal" class="px-5 py-2.5 rounded-xl font-bold text-xs text-white bg-gradient-gold shadow hover:brightness-105">
+            <i class="fa-solid fa-triangle-exclamation mr-1.5"></i> File a New Claim
+          </button>
+        </div>
+
+        <!-- Filter Pills -->
+        <div class="flex space-x-2 text-xs">
+          <button class="claim-filter-btn px-4 py-2 rounded-xl font-bold bg-amber-500 text-white" data-filter="all">All Claims (2)</button>
+          <button class="claim-filter-btn px-4 py-2 rounded-xl font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300" data-filter="Review">Open / In Review (1)</button>
+          <button class="claim-filter-btn px-4 py-2 rounded-xl font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300" data-filter="Closed">Closed & Paid (1)</button>
+        </div>
+
+        <!-- Claim 1: Open Water Intrusion -->
+        <div class="claim-record-item bg-white dark:bg-slate-800 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700 shadow-sm space-y-6" data-status="Review">
+          
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-700 gap-2">
+            <div>
+              <div class="flex items-center space-x-2">
+                <span class="font-mono text-xs font-bold text-amber-500">CLM-8921-2026</span>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold bg-blue-100 text-blue-800 dark:bg-blue-950/40 dark:text-blue-300">
+                  Under Review by Adjuster
+                </span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white mt-1">HVAC Chiller Rupture - Water Intrusion Loss</h3>
+              <p class="text-xs text-slate-400">Oakridge Distribution Logistics Hub • Reported Oct 06, 2026 • Est. Loss: $45,000</p>
+            </div>
+            <div class="text-right">
+              <span class="text-xs text-slate-400">Carrier Loss Number:</span>
+              <div class="font-mono text-xs font-bold text-slate-800 dark:text-slate-200">CHUBB-GL-991204</div>
+            </div>
+          </div>
+
+          <!-- Multi-Step Progress Timeline -->
+          <div>
+            <div class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4">Adjudication Milestone Timeline</div>
+            <div class="grid grid-cols-1 sm:grid-cols-5 gap-3 text-xs">
+              
+              <div class="p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-300 text-emerald-800 dark:text-emerald-200">
+                <div class="flex items-center space-x-1.5 font-bold mb-1">
+                  <i class="fa-solid fa-circle-check text-emerald-500"></i>
+                  <span>1. FNOL Filed</span>
+                </div>
+                <div class="text-[11px] text-slate-500">Oct 06, 2026</div>
+              </div>
+
+              <div class="p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-300 text-emerald-800 dark:text-emerald-200">
+                <div class="flex items-center space-x-1.5 font-bold mb-1">
+                  <i class="fa-solid fa-circle-check text-emerald-500"></i>
+                  <span>2. Broker Triage</span>
+                </div>
+                <div class="text-[11px] text-slate-500">Oct 07, 2026</div>
+              </div>
+
+              <div class="p-3 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-400 text-amber-800 dark:text-amber-200">
+                <div class="flex items-center space-x-1.5 font-bold mb-1">
+                  <i class="fa-solid fa-spinner fa-spin text-amber-500"></i>
+                  <span>3. Adjuster Review</span>
+                </div>
+                <div class="text-[11px] text-slate-500">In Progress (Crawford)</div>
+              </div>
+
+              <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-400">
+                <div class="flex items-center space-x-1.5 font-semibold mb-1">
+                  <i class="fa-regular fa-circle"></i>
+                  <span>4. Settlement Proof</span>
+                </div>
+                <div class="text-[11px]">Pending Estimate</div>
+              </div>
+
+              <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-400">
+                <div class="flex items-center space-x-1.5 font-semibold mb-1">
+                  <i class="fa-regular fa-circle"></i>
+                  <span>5. Funds Disbursed</span>
+                </div>
+                <div class="text-[11px]">Wire Transfer</div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between text-xs pt-2">
+            <span class="text-slate-500">Adjuster: <strong>Timothy Reynolds (Crawford & Co)</strong> • On-site inspection completed Oct 08.</span>
+            <button onclick="showToast('Adjuster notes and drying logs downloaded.', 'info')" class="text-amber-500 font-bold hover:underline">
+              Download Loss Report
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Claim 2: Closed Fire Claim -->
+        <div class="claim-record-item bg-white dark:bg-slate-800 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700 shadow-sm space-y-6" data-status="Closed">
+          
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-700 gap-2">
+            <div>
+              <div class="flex items-center space-x-2">
+                <span class="font-mono text-xs font-bold text-slate-400">CLM-4491-2025</span>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold bg-emerald-100 text-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-300">
+                  <i class="fa-solid fa-circle-check mr-1"></i> Closed & Paid in Full
+                </span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white mt-1">Midtown Executive Tower - Electrical Smoke Damage</h3>
+              <p class="text-xs text-slate-400">Midtown Commercial Complex • Reported Oct 12, 2025 • Total Settled: $182,400</p>
+            </div>
+            <div class="text-right">
+              <span class="text-xs text-slate-400">Carrier Loss Number:</span>
+              <div class="font-mono text-xs font-bold text-slate-800 dark:text-slate-200">TRV-PROP-883011</div>
+            </div>
+          </div>
+
+          <!-- Multi-Step Progress Timeline -->
+          <div>
+            <div class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4">Adjudication Milestone Timeline</div>
+            <div class="grid grid-cols-1 sm:grid-cols-5 gap-3 text-xs">
+              
+              <div class="p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-300 text-emerald-800 dark:text-emerald-200">
+                <div class="flex items-center space-x-1.5 font-bold mb-1">
+                  <i class="fa-solid fa-circle-check text-emerald-500"></i>
+                  <span>1. FNOL Filed</span>
+                </div>
+                <div class="text-[11px] text-slate-500">Oct 12, 2025</div>
+              </div>
+
+              <div class="p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-300 text-emerald-800 dark:text-emerald-200">
+                <div class="flex items-center space-x-1.5 font-bold mb-1">
+                  <i class="fa-solid fa-circle-check text-emerald-500"></i>
+                  <span>2. Broker Triage</span>
+                </div>
+                <div class="text-[11px] text-slate-500">Oct 14, 2025</div>
+              </div>
+
+              <div class="p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-300 text-emerald-800 dark:text-emerald-200">
+                <div class="flex items-center space-x-1.5 font-bold mb-1">
+                  <i class="fa-solid fa-circle-check text-emerald-500"></i>
+                  <span>3. Adjuster Review</span>
+                </div>
+                <div class="text-[11px] text-slate-500">Approved Nov 04, 2025</div>
+              </div>
+
+              <div class="p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-300 text-emerald-800 dark:text-emerald-200">
+                <div class="flex items-center space-x-1.5 font-bold mb-1">
+                  <i class="fa-solid fa-circle-check text-emerald-500"></i>
+                  <span>4. Settlement Proof</span>
+                </div>
+                <div class="text-[11px] text-slate-500">Signed Nov 28, 2025</div>
+              </div>
+
+              <div class="p-3 rounded-xl bg-emerald-100 dark:bg-emerald-900/40 border-2 border-emerald-500 text-emerald-900 dark:text-emerald-100 font-bold shadow-sm">
+                <div class="flex items-center space-x-1.5 font-bold mb-1">
+                  <i class="fa-solid fa-money-bill-transfer text-emerald-600 dark:text-emerald-400"></i>
+                  <span>5. Funds Disbursed</span>
+                </div>
+                <div class="text-[11px] text-emerald-700 dark:text-emerald-300">Wired Dec 14 • $182,400</div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between text-xs pt-2 border-t border-slate-100 dark:border-slate-700 gap-2">
+            <span class="text-slate-500">Carrier Sign-off: <strong>Travelers Specialty Engineering</strong> • Restorations completed and signed off.</span>
+            <button onclick="showToast('Final settlement release receipt and wire confirmation downloaded.', 'success')" class="text-emerald-600 dark:text-emerald-400 font-bold hover:underline flex items-center">
+              <i class="fa-solid fa-file-invoice-dollar mr-1.5"></i> Download Settlement Release
+            </button>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- ================= SECTION 5: POLICY DOCUMENTS ================= -->
+      <section id="section-documents" class="dashboard-section hidden space-y-6">
+        
+        <div>
+          <h2 class="text-2xl font-extrabold text-slate-900 dark:text-white">Policy Documents & Certificates (COIs)</h2>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Certified insurance binders, endorsements, and ACORD declarations</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm flex items-start justify-between">
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 rounded-2xl bg-rose-500/10 text-rose-500 flex items-center justify-center text-xl shrink-0">
+                <i class="fa-solid fa-file-pdf"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-sm">Policy Declaration Binder (2026-2027)</h4>
+                <div class="text-xs text-slate-400">Policy: SHLD-2024-NY-891 • Midtown Executive Tower</div>
+                <div class="text-[11px] text-slate-500 mt-1">PDF • 4.2 MB • Updated Jan 01, 2026</div>
+              </div>
+            </div>
+            <div class="flex flex-col space-y-2">
+              <button data-preview-doc data-doc-name="Policy Declaration Binder" data-doc-policy="SHLD-2024-NY-891" class="px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 text-xs font-bold hover:bg-slate-100 dark:hover:bg-slate-700">
+                Preview
+              </button>
+              <button data-download-doc data-doc-name="Policy-Binder-Midtown-Tower" class="px-3 py-1.5 rounded-lg bg-amber-500 text-white text-xs font-bold hover:bg-amber-600">
+                Download
+              </button>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm flex items-start justify-between">
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 rounded-2xl bg-blue-500/10 text-blue-500 flex items-center justify-center text-xl shrink-0">
+                <i class="fa-solid fa-certificate"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-sm">Certificate of Insurance (ACORD 25)</h4>
+                <div class="text-xs text-slate-400">Holder: JP Morgan Chase Real Estate Finance</div>
+                <div class="text-[11px] text-slate-500 mt-1">PDF • 850 KB • Issued Today</div>
+              </div>
+            </div>
+            <div class="flex flex-col space-y-2">
+              <button data-preview-doc data-doc-name="Certificate of Insurance (COI)" data-doc-policy="SHLD-2024-NY-891" class="px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 text-xs font-bold hover:bg-slate-100 dark:hover:bg-slate-700">
+                Preview
+              </button>
+              <button data-download-doc data-doc-name="COI-ACORD-25-JPMorgan" class="px-3 py-1.5 rounded-lg bg-amber-500 text-white text-xs font-bold hover:bg-amber-600">
+                Download
+              </button>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm flex items-start justify-between">
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-xl shrink-0">
+                <i class="fa-solid fa-file-contract"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-sm">Agreed Value Endorsement Rider</h4>
+                <div class="text-xs text-slate-400">Coinsurance Suspension Endorsement Schedule</div>
+                <div class="text-[11px] text-slate-500 mt-1">PDF • 1.1 MB • Official Carrier Stamp</div>
+              </div>
+            </div>
+            <div class="flex flex-col space-y-2">
+              <button data-preview-doc data-doc-name="Agreed Value Endorsement" data-doc-policy="SHLD-2024-NY-891" class="px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 text-xs font-bold hover:bg-slate-100 dark:hover:bg-slate-700">
+                Preview
+              </button>
+              <button data-download-doc data-doc-name="Agreed-Value-Endorsement" class="px-3 py-1.5 rounded-lg bg-amber-500 text-white text-xs font-bold hover:bg-amber-600">
+                Download
+              </button>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm flex items-start justify-between">
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-xl shrink-0">
+                <i class="fa-solid fa-clipboard-check"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-sm">Certified Loss Run Report (5 Years)</h4>
+                <div class="text-xs text-slate-400">All Carrier Loss History Statements</div>
+                <div class="text-[11px] text-slate-500 mt-1">PDF • 2.8 MB • Updated Oct 01, 2026</div>
+              </div>
+            </div>
+            <div class="flex flex-col space-y-2">
+              <button data-preview-doc data-doc-name="5-Year Loss Run History" data-doc-policy="SHLD-2024-NY-891" class="px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 text-xs font-bold hover:bg-slate-100 dark:hover:bg-slate-700">
+                Preview
+              </button>
+              <button data-download-doc data-doc-name="5-Year-Loss-Run-Report" class="px-3 py-1.5 rounded-lg bg-amber-500 text-white text-xs font-bold hover:bg-amber-600">
+                Download
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- ================= SECTION 6: PAYMENTS & BILLING ================= -->
+      <section id="section-payments" class="dashboard-section hidden space-y-6">
+        
+        <div>
+          <h2 class="text-2xl font-extrabold text-slate-900 dark:text-white">Premium Payments & Invoices</h2>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Escrow billing schedules and historical premium receipts</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-slate-200 dark:border-slate-700">
+            <div class="text-xs text-slate-500 font-bold uppercase">Next Premium Due</div>
+            <div class="text-2xl font-extrabold text-slate-900 dark:text-white mt-1">$12,400.00</div>
+            <div class="text-xs text-amber-500 font-bold mt-1">Due Nov 01, 2026</div>
+          </div>
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-slate-200 dark:border-slate-700">
+            <div class="text-xs text-slate-500 font-bold uppercase">Payment Method on File</div>
+            <div class="text-base font-extrabold text-slate-900 dark:text-white mt-1">Chase Commercial ACH (****4912)</div>
+            <div class="text-xs text-emerald-500 font-bold mt-1">Auto-Pay Active</div>
+          </div>
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-slate-200 dark:border-slate-700">
+            <div class="text-xs text-slate-500 font-bold uppercase">Total 2026 Paid to Date</div>
+            <div class="text-2xl font-extrabold text-slate-900 dark:text-white mt-1">$124,000.00</div>
+            <div class="text-xs text-slate-400 font-bold mt-1">10 Paid Installments</div>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm">
+          <table class="w-full text-left border-collapse text-xs">
+            <thead>
+              <tr class="bg-slate-50 dark:bg-slate-900/60 border-b border-slate-200 dark:border-slate-700 text-slate-500">
+                <th class="p-4">Invoice #</th>
+                <th class="p-4">Description</th>
+                <th class="p-4">Amount</th>
+                <th class="p-4">Date Processed</th>
+                <th class="p-4">Status</th>
+                <th class="p-4 text-right">Receipt</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 dark:divide-slate-700 text-slate-700 dark:text-slate-300">
+              <tr>
+                <td class="p-4 font-mono font-bold">INV-2026-10</td>
+                <td class="p-4">October Commercial Property Installment (Midtown + Oakridge)</td>
+                <td class="p-4 font-bold">$12,400.00</td>
+                <td class="p-4">Oct 01, 2026</td>
+                <td class="p-4"><span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">Paid</span></td>
+                <td class="p-4 text-right"><button onclick="if(window.triggerDownloadDocument){window.triggerDownloadDocument('INV-2026-10-Premium-Receipt', 'SHLD-2024-NY-891')}else{showToast('Receipt PDF downloaded.', 'success')}" class="text-amber-500 font-bold hover:underline">PDF</button></td>
+              </tr>
+              <tr>
+                <td class="p-4 font-mono font-bold">INV-2026-09</td>
+                <td class="p-4">September Commercial Property Installment</td>
+                <td class="p-4 font-bold">$12,400.00</td>
+                <td class="p-4">Sep 01, 2026</td>
+                <td class="p-4"><span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">Paid</span></td>
+                <td class="p-4 text-right"><button onclick="showToast('Receipt PDF downloaded.', 'success')" class="text-amber-500 font-bold hover:underline">PDF</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </section>
+
+      <!-- ================= SECTION 7: NOTIFICATIONS ================= -->
+      <section id="section-notifications" class="dashboard-section hidden space-y-6">
+        
+        <div class="flex justify-between items-center">
+          <div>
+            <h2 class="text-2xl font-extrabold text-slate-900 dark:text-white">Account Alerts & System Notifications</h2>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Timely alerts regarding upcoming renewals, quotes, and adjuster assignments</p>
+          </div>
+          <button onclick="showToast('All notifications marked as read.', 'info')" class="text-xs font-bold text-amber-500 hover:underline">
+            Mark All as Read
+          </button>
+        </div>
+
+        <div class="space-y-4">
+          <div class="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-start space-x-4 shadow-sm">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center shrink-0">
+              <i class="fa-solid fa-file-invoice"></i>
+            </div>
+            <div class="flex-1 text-xs">
+              <div class="font-bold text-slate-900 dark:text-white">Action Required: Oakridge Hub Renewal Quotes Available</div>
+              <p class="text-slate-600 dark:text-slate-300 mt-1">Chubb and Travelers have released final competitive renewal rates for your logistics property. Travelers offers a 10% lower premium with full Agreed Value.</p>
+              <div class="text-[11px] text-slate-400 mt-2">18 hours ago • <button data-jump-tab="compare-quotes" class="text-amber-500 font-bold hover:underline">Review Quotes Now</button></div>
+            </div>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-start space-x-4 shadow-sm">
+            <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-500 flex items-center justify-center shrink-0">
+              <i class="fa-solid fa-user-check"></i>
+            </div>
+            <div class="flex-1 text-xs">
+              <div class="font-bold text-slate-900 dark:text-white">Claim Adjuster Assigned: Crawford & Company</div>
+              <p class="text-slate-600 dark:text-slate-300 mt-1">Adjuster Timothy Reynolds has completed moisture mapping for Claim #CLM-8921-2026. Drying logs have been submitted to underwriting.</p>
+              <div class="text-[11px] text-slate-400 mt-2">Oct 08, 2026 • <button data-jump-tab="claims" class="text-blue-500 font-bold hover:underline">View Claim Progress</button></div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ================= SECTION 8: PROFILE & SETTINGS ================= -->
+      <section id="section-profile" class="dashboard-section hidden space-y-6">
+        
+        <div>
+          <h2 class="text-2xl font-extrabold text-slate-900 dark:text-white">Company Profile & Authorized Contacts</h2>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Security authentication, 2FA settings, and corporate signatories</p>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm space-y-6 max-w-2xl">
+          <div class="grid grid-cols-2 gap-4 text-xs font-semibold">
+            <div>
+              <label class="block text-slate-500 mb-1">Company Name</label>
+              <input type="text" value="Skyline Commercial Holdings LLC" class="input-field w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-sm">
+            </div>
+            <div>
+              <label class="block text-slate-500 mb-1">Tax ID / FEIN</label>
+              <input type="text" value="XX-XXX8910" class="input-field w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-sm">
+            </div>
+            <div>
+              <label class="block text-slate-500 mb-1">Primary Authorized Contact</label>
+              <input type="text" value="Sarah Connor, COO" class="input-field w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-sm">
+            </div>
+            <div>
+              <label class="block text-slate-500 mb-1">Notification Email</label>
+              <input type="email" value="sarah.connor@skylineholdings.com" class="input-field w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-sm">
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 dark:border-slate-700 flex justify-between items-center text-xs">
+            <div>
+              <div class="font-bold text-slate-900 dark:text-white">Two-Factor Authentication (2FA)</div>
+              <div class="text-slate-400">Enforce biometric or SMS OTP for policy binding actions</div>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 font-bold text-[11px]">Enabled</span>
+          </div>
+
+          <button onclick="showToast('Corporate profile changes saved.', 'success')" class="px-6 py-2.5 rounded-xl font-bold text-xs text-white bg-amber-500 hover:bg-amber-600 transition-colors shadow">
+            Save Profile Changes
+          </button>
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- MODAL: FILE A NEW CLAIM -->
+  <div id="file-claim-modal" class="fixed inset-0 z-50 modal-backdrop hidden items-center justify-center p-4">
+    <div class="bg-white dark:bg-slate-800 rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-slate-200 dark:border-slate-700 relative">
+      <button id="close-file-claim-modal" class="absolute top-5 right-5 text-slate-400 hover:text-white text-lg"><i class="fa-solid fa-xmark"></i></button>
+      <div class="flex items-center space-x-3 mb-4">
+        <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-lg">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white">File Incident Notice of Loss</h3>
+          <p class="text-xs text-slate-400">Emergency claims triage & carrier dispatch</p>
+        </div>
+      </div>
+      <form id="file-claim-form" class="space-y-4 text-xs font-semibold">
+        <div>
+          <label class="block mb-1 text-slate-700 dark:text-slate-300">Select Insured Property Location *</label>
+          <select class="input-field w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-sm">
+            <option>Midtown Executive Tower (SHLD-2024-NY-891)</option>
+            <option>Oakridge Logistics Hub (SHLD-2025-IL-402)</option>
+            <option>Memorial Galleria Plaza (SHLD-2025-TX-911)</option>
+          </select>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block mb-1 text-slate-700 dark:text-slate-300">Incident Peril Type *</label>
+            <select class="input-field w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-sm">
+              <option>Water Damage / Riser Rupture</option>
+              <option>Fire & Smoke Damage</option>
+              <option>Windstorm & Roof Failure</option>
+              <option>Equipment Breakdown</option>
+              <option>Vandalism / Tenant Malicious Damage</option>
+            </select>
+          </div>
+          <div>
+            <label class="block mb-1 text-slate-700 dark:text-slate-300">Estimated Loss Amount</label>
+            <input type="text" placeholder="e.g. $75,000" class="input-field w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-sm" required>
+          </div>
+        </div>
+        <div>
+          <label class="block mb-1 text-slate-700 dark:text-slate-300">Incident Description & Immediate Mitigations</label>
+          <textarea rows="3" placeholder="Briefly describe what occurred and if emergency drying contractors were contacted..." class="input-field w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-sm" required></textarea>
+        </div>
+        <button type="submit" class="w-full py-3.5 rounded-xl font-bold text-sm text-white bg-gradient-gold shadow-md hover:brightness-105 transition-all">
+          <i class="fa-solid fa-paper-plane mr-2"></i> Submit Loss Notice to Carrier
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: SAMPLE DOCUMENT VIEWER -->
+  <div id="doc-viewer-modal" class="fixed inset-0 z-50 modal-backdrop hidden items-center justify-center p-4">
+    <div class="bg-white dark:bg-slate-900 rounded-3xl max-w-3xl w-full p-6 shadow-2xl border border-slate-200 dark:border-slate-700 relative max-h-[90vh] flex flex-col">
+      <div class="flex justify-between items-center pb-4 border-b border-slate-200 dark:border-slate-800">
+        <div>
+          <h3 id="doc-viewer-title" class="text-base font-bold text-slate-900 dark:text-white">Document Preview</h3>
+          <p id="doc-viewer-policy" class="text-xs text-slate-400">Policy Ref: SHLD-2024-NY-891</p>
+        </div>
+        <div class="flex items-center space-x-2">
+          <button onclick="window.print()" class="p-2 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 text-xs" title="Print Certificate">
+            <i class="fa-solid fa-print"></i>
+          </button>
+          <button id="close-doc-viewer-modal" class="p-2 text-slate-400 hover:text-white text-base" aria-label="Close Preview">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+      
+      <div id="doc-viewer-preview-content" class="flex-1 overflow-y-auto my-4 bg-white dark:bg-slate-950 rounded-2xl border border-slate-200 dark:border-slate-800">
+        <!-- Rendered sample declaration via dashboard-client.js -->
+      </div>
+
+      <div class="pt-3 border-t border-slate-200 dark:border-slate-800 flex justify-between items-center text-xs">
+        <span class="text-slate-400 italic">Sample demonstrative document viewer</span>
+        <button id="doc-modal-download-btn" class="px-5 py-2 rounded-xl bg-amber-500 text-white font-bold hover:bg-amber-600 transition-colors">
+          <i class="fa-solid fa-download mr-1"></i> Download Certified PDF
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/forms.js"></script>
+  <script src="assets/js/dashboard-client.js"></script>
+
+    <script>
+    window.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+            const btn = document.querySelector('[data-tab="payments"]');
+            if (btn) btn.click();
+        }, 600);
+    });
+    </script>
+    </body>
+</html>

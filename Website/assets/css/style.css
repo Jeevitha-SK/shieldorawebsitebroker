@@ -1,0 +1,1605 @@
+/* ==========================================================================
+   Shieldora Risk Solutions - Commercial Property Insurance Broker
+   Universal Stylesheet: Design System, Anti-Gravity Physics & Complete RTL/LTR
+   ========================================================================== */
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* ==========================================================================
+     Shieldora Standardized Design & Typography System
+     ========================================================================== */
+  --font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: 16px;
+  --font-nav: 15px;
+  --font-h1: clamp(2rem, 3.5vw, 2.75rem);
+  --font-h2: clamp(1.5rem, 2.5vw, 2rem);
+  --font-h3: clamp(1.2rem, 2vw, 1.5rem);
+  --font-btn: 14px;
+  --navbar-height: 72px;
+
+  /* Theme Color Palette */
+  --primary-navy: #0A192F;
+  --primary-navy-dark: #060D17;
+  --primary-navy-light: #1E293B;
+  --accent-gold: #D97706;
+  --accent-gold-hover: #B45309;
+  --accent-gold-light: #FEF3C7;
+  --steel-gray: #64748B;
+  --steel-dark: #334155;
+  --steel-light: #F1F5F9;
+  --bg-light: #F8FAFC;
+  --bg-dark: #0B1120;
+  --card-dark: #1E293B;
+  --border-light: #E2E8F0;
+  --border-dark: #334155;
+}
+
+/* Base Styles & Full Viewport Scaling Protection */
+html {
+  font-family: var(--font-family);
+  font-size: 16px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  zoom: 1;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+[id] {
+  scroll-margin-top: 5.5rem;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-body, 16px) !important;
+  line-height: 1.6;
+  width: 100% !important;
+  max-width: 100% !important;
+  zoom: 1;
+  transform: none;
+  overflow-x: clip;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Standardized Heading Hierarchy */
+h1 {
+  font-size: var(--font-h1);
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: var(--font-h2);
+  line-height: 1.25;
+}
+
+h3 {
+  font-size: var(--font-h3);
+  line-height: 1.3;
+}
+
+/* ==========================================================================
+   Main Sticky Navbar & 3-Section Flexbox Architecture
+   ========================================================================== */
+.main-navbar,
+header.main-navbar,
+header {
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  width: 100% !important;
+  min-height: var(--navbar-height, 72px) !important;
+  box-sizing: border-box !important;
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #E2E8F0 !important;
+  box-shadow: 0 4px 16px -2px rgba(11, 17, 32, 0.06), 0 2px 4px -1px rgba(11, 17, 32, 0.04) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
+  font-size: var(--font-nav, 15px);
+}
+
+/* Dark Mode: Solid background (#0b1120) & high-contrast elevation */
+html.dark .main-navbar,
+.dark .main-navbar,
+html.dark header,
+.dark header,
+html.dark .glass-nav,
+.dark .glass-nav,
+html.dark .site-header,
+.dark .site-header {
+  background-color: #0b1120 !important;
+  border-bottom: 1px solid #1e293b !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.6), 0 2px 6px -1px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Flexbox Main Navbar Container - Full width, generous padding, matches footer vertically */
+.navbar-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: var(--navbar-height, 72px) !important;
+  padding: 15px 40px !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 1279px) and (min-width: 1024px) {
+  .navbar-container {
+    padding: 15px 32px !important;
+    min-height: var(--navbar-height, 72px) !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  .navbar-container {
+    padding: 12px 24px !important; /* matches sm:px-6 = 24px */
+    min-height: 64px !important;
+  }
+}
+
+@media (max-width: 639px) {
+  .navbar-container {
+    padding: 12px 16px !important; /* matches px-4 = 16px */
+    min-height: 60px !important;
+  }
+}
+
+/* Comprehensive Footer Alignment - Aligns vertically with header on every screen size */
+footer > div,
+footer .footer-container {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-left: 40px !important;
+  padding-right: 40px !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 1279px) and (min-width: 1024px) {
+  footer > div,
+  footer .footer-container {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  footer > div,
+  footer .footer-container {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+}
+
+@media (max-width: 639px) {
+  footer > div,
+  footer .footer-container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+/* Left Section: Logo & Brand Name */
+.navbar-left {
+  display: flex !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+}
+
+/* Center Section: Navigation Links & Right Section: Controls (Desktop >= 1024px) */
+@media (min-width: 1024px) {
+  .navbar-center {
+    display: flex !important;
+    align-items: center !important;
+    gap: 24px !important;
+    font-size: var(--font-nav, 15px) !important;
+    font-weight: 600 !important;
+    white-space: nowrap !important;
+  }
+  .navbar-center .nav-link,
+  .navbar-center a,
+  .navbar-center button {
+    font-size: var(--font-nav, 15px) !important;
+    font-weight: 600 !important;
+  }
+  .navbar-right {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+  }
+  .navbar-right a,
+  .navbar-right button,
+  .navbar-right .btn-portal-login,
+  .navbar-right .btn-portal-register {
+    font-size: var(--font-btn, 14px) !important;
+  }
+  .navbar-right a[href*="login"],
+  .navbar-right a[href*="register"],
+  .navbar-right .btn-portal-login,
+  .navbar-right .btn-portal-register {
+    height: 38px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
+}
+
+@media (max-width: 1279px) and (min-width: 1024px) {
+  .navbar-container {
+    padding: 15px 32px !important;
+  }
+  .navbar-center {
+    gap: 16px !important;
+  }
+}
+
+/* Mobile/Tablet view: Hide desktop center links and right controls */
+@media (max-width: 1023px) {
+  .navbar-center,
+  .navbar-right {
+    display: none !important;
+  }
+}
+
+/* Scrolled elevation when user scrolls down */
+.main-navbar.scrolled,
+header.scrolled,
+.glass-nav.scrolled,
+.site-header.scrolled {
+  box-shadow: 0 10px 25px -3px rgba(11, 17, 32, 0.1), 0 4px 8px -2px rgba(11, 17, 32, 0.06) !important;
+}
+
+html.dark .main-navbar.scrolled,
+html.dark header.scrolled,
+.dark header.scrolled,
+html.dark .glass-nav.scrolled,
+.dark .glass-nav.scrolled,
+html.dark .site-header.scrolled,
+.dark .site-header.scrolled {
+  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.8), 0 4px 8px -2px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Seamless RTL & LTR positioning across viewport */
+html[dir="rtl"] .main-navbar,
+html[dir="rtl"] header,
+html[dir="rtl"] .glass-nav,
+html[dir="rtl"] .site-header {
+  left: 0 !important;
+  right: 0 !important;
+}
+
+html[dir="ltr"] .main-navbar,
+html[dir="ltr"] header,
+html[dir="ltr"] .glass-nav,
+html[dir="ltr"] .site-header {
+  left: 0 !important;
+  right: 0 !important;
+}
+
+/* Mobile Drawer - Stays above sticky header */
+#mobile-menu {
+  z-index: 1500 !important;
+}
+
+/* Modals & Dialogs - Stay above sticky header & Responsive Bounds */
+.modal-backdrop,
+.modal,
+#global-quote-modal,
+#file-claim-modal,
+#doc-viewer-modal {
+  z-index: 2000 !important;
+}
+
+#global-quote-modal > div {
+  width: 100% !important;
+  max-width: 576px !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 639px) {
+  #global-quote-modal {
+    padding: 12px !important;
+  }
+  #global-quote-modal > div {
+    max-width: calc(100vw - 24px) !important;
+    width: calc(100vw - 24px) !important;
+    margin: auto !important;
+    padding: 16px !important;
+    border-radius: 1.25rem !important;
+  }
+  #global-quote-modal select,
+  #global-quote-modal input,
+  #global-quote-modal form,
+  #global-quote-modal .input-field {
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* Toast Notifications - Highest priority */
+#toast-container {
+  z-index: 2100 !important;
+}
+
+/* Site Brand Component (Header & Shared Navigation) */
+.site-brand {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  min-width: 0 !important;
+  flex-shrink: 0 !important;
+  text-decoration: none !important;
+}
+
+.site-brand img,
+.site-brand .brand-logo,
+.site-brand .brand-logo-icon,
+.site-brand .brand-logo-icon svg {
+  display: block !important;
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 40px !important;
+  min-height: 40px !important;
+  object-fit: contain !important;
+  flex-shrink: 0 !important;
+  transform: none !important;
+}
+
+.site-brand .brand-name {
+  position: static !important;
+  min-width: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  white-space: nowrap !important;
+  overflow-wrap: normal !important;
+}
+
+.site-brand .brand-title {
+  display: block !important;
+  font-family: var(--font-family) !important;
+  font-size: 1.125rem !important; /* 18px */
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.15 !important;
+}
+
+.site-brand .brand-subtitle {
+  display: block !important;
+  font-family: var(--font-family) !important;
+  font-size: 0.625rem !important; /* 10px */
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  line-height: 1 !important;
+}
+
+/* RTL Layout Direction Handling for Brand (No overlap, clean ordering) */
+html[dir="rtl"] .site-brand {
+  direction: rtl !important;
+  margin-right: 0 !important;
+  margin-left: 0.75rem !important;
+}
+
+html[dir="rtl"] .site-brand .brand-name {
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+html[dir="ltr"] .site-brand {
+  direction: ltr !important;
+  margin-left: 0 !important;
+  margin-right: 0.75rem !important;
+}
+
+html[dir="ltr"] .site-brand .brand-name {
+  text-align: left !important;
+  direction: ltr !important;
+}
+
+/* Brand Gradient Utilities */
+.bg-gradient-navy {
+  background: linear-gradient(135deg, #0A192F 0%, #0F2042 50%, #172554 100%);
+}
+
+.bg-gradient-navy-radial {
+  background: radial-gradient(circle at top right, #1E3A8A 0%, #0A192F 60%, #060D17 100%);
+}
+
+.bg-gradient-gold {
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 50%, #B45309 100%);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #FBBF24 0%, #D97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtle Hero Pattern */
+.hero-pattern {
+  background-image: radial-gradient(rgba(217, 119, 6, 0.12) 1px, transparent 1px), radial-gradient(rgba(30, 64, 175, 0.15) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+}
+
+/* Custom Cards with Elevation and Top Photography */
+.insurance-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+}
+
+.insurance-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(10, 25, 47, 0.1), 0 10px 10px -5px rgba(10, 25, 47, 0.04);
+}
+
+.dark .insurance-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================================
+   Anti-Gravity Floating Animation & Staggered Physics for Service Cards
+   ========================================================================== */
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.service-card {
+  animation: float 6s ease-in-out infinite;
+  transition:
+    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    box-shadow 0.4s ease;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Stagger Animation Timing for all 9 cards */
+.service-card:nth-child(1),
+.service-card-1 {
+  animation-delay: 0s;
+}
+
+.service-card:nth-child(2),
+.service-card-2 {
+  animation-delay: 1s;
+}
+
+.service-card:nth-child(3),
+.service-card-3 {
+  animation-delay: 2s;
+}
+
+.service-card:nth-child(4),
+.service-card-4 {
+  animation-delay: 0.5s;
+}
+
+.service-card:nth-child(5),
+.service-card-5 {
+  animation-delay: 1.5s;
+}
+
+.service-card:nth-child(6),
+.service-card-6 {
+  animation-delay: 2.5s;
+}
+
+.service-card:nth-child(7),
+.service-card-7 {
+  animation-delay: 0.8s;
+}
+
+.service-card:nth-child(8),
+.service-card-8 {
+  animation-delay: 1.8s;
+}
+
+.service-card:nth-child(9),
+.service-card-9 {
+  animation-delay: 2.8s;
+}
+
+/* Interactive Hover Lift & Orange Glow */
+.service-card:hover {
+  transform: translateY(-16px) scale(1.02);
+  box-shadow: 0 20px 30px -10px rgba(255, 153, 0, 0.25), 0 10px 15px -5px rgba(0, 0, 0, 0.1);
+  z-index: 20;
+}
+
+/* Inner Container - Eliminates Animation/Hover Transform Collision */
+.service-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 16px;
+  overflow: hidden;
+  box-sizing: border-box;
+  transform: translateY(0) scale(1);
+  transition:
+    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    box-shadow 0.4s ease;
+}
+
+.service-card:hover .service-card-inner,
+.service-card-inner:hover,
+.service-card:hover .insurance-card {
+  transform: translateY(-16px) scale(1.02) !important;
+  box-shadow: 0 20px 30px -10px rgba(255, 153, 0, 0.25), 0 10px 15px -5px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Service Card Top Image Styling */
+.insurance-card > img,
+.service-card > img,
+.service-card-inner > img {
+  width: 100% !important;
+  height: 230px !important;
+  object-fit: cover !important;
+  border-top-left-radius: 16px !important;
+  border-top-right-radius: 16px !important;
+  display: block !important;
+  flex-shrink: 0 !important;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.insurance-card:hover > img,
+.service-card:hover > img,
+.service-card-inner:hover > img,
+.service-card:hover .service-card-inner > img {
+  transform: scale(1.03) !important;
+}
+
+/* Accessibility: Disable floating animation on prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .service-card,
+  .service-card-inner {
+    animation: none !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #0B1120;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* ==========================================================================
+   Anti-Gravity Zero-G Floating Physics System
+   ========================================================================== */
+
+@keyframes floatEffect {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes floatEffectStaggered {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* Scoped exclusively to root class .anti-gravity-enabled and legacy .anti-gravity */
+.anti-gravity-enabled section:not(header):not(nav):not(#mobile-menu),
+.anti-gravity-enabled .card,
+.anti-gravity-enabled .insurance-card,
+.anti-gravity-enabled .process-step-card,
+.anti-gravity-enabled .pricing-card,
+.anti-gravity-enabled .blog-card,
+.anti-gravity-enabled .antigravity-card,
+.anti-gravity-enabled .hero-card-widget,
+.anti-gravity-enabled .stat-item,
+.anti-gravity section:not(header):not(nav):not(#mobile-menu),
+.anti-gravity .card,
+.anti-gravity .insurance-card,
+.anti-gravity .process-step-card,
+.anti-gravity .pricing-card,
+.anti-gravity .blog-card,
+.anti-gravity .antigravity-card,
+.anti-gravity .hero-card-widget,
+.anti-gravity .stat-item {
+  animation: floatEffect 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Staggered floating for adjacent cards */
+.anti-gravity-enabled .insurance-card:nth-child(2n),
+.anti-gravity-enabled .process-step-card:nth-child(2n),
+.anti-gravity-enabled .card:nth-child(2n),
+.anti-gravity-enabled .pricing-card:nth-child(2n),
+.anti-gravity-enabled .blog-card:nth-child(2n),
+.anti-gravity .insurance-card:nth-child(2n),
+.anti-gravity .process-step-card:nth-child(2n),
+.anti-gravity .card:nth-child(2n),
+.anti-gravity .pricing-card:nth-child(2n),
+.anti-gravity .blog-card:nth-child(2n) {
+  animation: floatEffectStaggered 7s ease-in-out infinite 0.8s;
+}
+
+/* Active Anti-Gravity Button Pill Indicator */
+.antigravity-toggle-btn.active {
+  background: linear-gradient(135deg, rgba(217, 119, 6, 0.25), rgba(30, 64, 175, 0.25));
+  border-color: #D97706 !important;
+  color: #F59E0B !important;
+  box-shadow: 0 0 12px rgba(217, 119, 6, 0.4);
+}
+
+/* Exclude navigation, header, form controls, buttons, modals, dropdowns, and sidebars */
+header,
+header *,
+nav,
+nav *,
+#mobile-menu,
+#mobile-menu *,
+.glass-nav,
+.glass-nav *,
+input,
+select,
+textarea,
+button,
+#global-quote-modal,
+#global-quote-modal *,
+.dashboard-sidebar,
+.dashboard-sidebar *,
+.dropdown-menu {
+  animation: none !important;
+}
+
+/* Accessibility: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .anti-gravity-enabled section,
+  .anti-gravity-enabled .card,
+  .anti-gravity-enabled .insurance-card,
+  .anti-gravity-enabled .process-step-card,
+  .anti-gravity-enabled .pricing-card,
+  .anti-gravity-enabled .blog-card,
+  .anti-gravity-enabled *,
+  .anti-gravity section,
+  .anti-gravity .card,
+  .anti-gravity .insurance-card,
+  .anti-gravity .process-step-card,
+  .anti-gravity .pricing-card,
+  .anti-gravity .blog-card,
+  .anti-gravity * {
+    animation: none !important;
+  }
+}
+
+/* ==========================================================================
+   Universal Right-to-Left (RTL) & Left-to-Right (LTR) Layout Engine
+   ========================================================================== */
+
+/* 1. Root & Document-Level Direction */
+html[dir="rtl"],
+body[dir="rtl"],
+.rtl-layout {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir="ltr"],
+body[dir="ltr"] {
+  direction: ltr;
+  text-align: left;
+}
+
+/* 2. Direction-Aware Headings, Titles & Paragraphs */
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4,
+html[dir="rtl"] h5,
+html[dir="rtl"] h6,
+html[dir="rtl"] p,
+html[dir="rtl"] li,
+html[dir="rtl"] label,
+html[dir="rtl"] dt,
+html[dir="rtl"] dd,
+html[dir="rtl"] blockquote {
+  text-align: right;
+  direction: rtl;
+}
+
+html[dir="ltr"] h1,
+html[dir="ltr"] h2,
+html[dir="ltr"] h3,
+html[dir="ltr"] h4,
+html[dir="ltr"] h5,
+html[dir="ltr"] h6,
+html[dir="ltr"] p,
+html[dir="ltr"] li,
+html[dir="ltr"] label,
+html[dir="ltr"] dt,
+html[dir="ltr"] dd,
+html[dir="ltr"] blockquote {
+  text-align: left;
+  direction: ltr;
+}
+
+/* 3. Reversible text utilities */
+html[dir="rtl"] .text-left:not(.keep-left) {
+  text-align: right;
+}
+
+html[dir="ltr"] .text-left {
+  text-align: left;
+}
+
+html[dir="rtl"] .text-right:not(.keep-right) {
+  text-align: left;
+}
+
+html[dir="ltr"] .text-right {
+  text-align: right;
+}
+
+/* 4. Intentionally Centered Elements - Preserved in Both Directions */
+html[dir="rtl"] .text-center,
+html[dir="ltr"] .text-center,
+.text-center {
+  text-align: center;
+}
+
+/* Explicitly preserve intentionally centered headings/items when marked with .text-center */
+html[dir="rtl"] h1.text-center,
+html[dir="rtl"] h2.text-center,
+html[dir="rtl"] h3.text-center,
+html[dir="rtl"] h4.text-center,
+html[dir="rtl"] h5.text-center,
+html[dir="rtl"] h6.text-center,
+html[dir="rtl"] p.text-center,
+html[dir="rtl"] .keep-center,
+html[dir="ltr"] .keep-center {
+  text-align: center;
+}
+
+/* Override parent .text-center containers for headings and content that must follow reading direction */
+html[dir="rtl"] .text-center:not(.stat-item):not(.keep-center) > h1:not(.text-center):not(.keep-center),
+html[dir="rtl"] .text-center:not(.stat-item):not(.keep-center) > h2:not(.text-center):not(.keep-center),
+html[dir="rtl"] .text-center:not(.stat-item):not(.keep-center) > h3:not(.text-center):not(.keep-center),
+html[dir="rtl"] .text-center:not(.stat-item):not(.keep-center) > h4:not(.text-center):not(.keep-center),
+html[dir="rtl"] .text-center:not(.stat-item):not(.keep-center) > p:not(.text-center):not(.keep-center),
+html[dir="rtl"] .text-center:not(.stat-item):not(.keep-center) > span.uppercase {
+  text-align: right;
+  display: block;
+}
+
+/* 4. Process Step Cards & Grid Sequence Reversal (01 to 04 from Right to Left) */
+html[dir="rtl"] .process-step-grid,
+html[dir="rtl"] .process-steps-container {
+  direction: rtl !important;
+}
+
+html[dir="rtl"] .process-step-card,
+html[dir="rtl"] .step-card {
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+/* Step badges (01, 02, 03, 04) positioned on the right edge */
+html[dir="rtl"] .process-step-card .w-12.h-12,
+html[dir="rtl"] .step-card .w-12.h-12,
+html[dir="rtl"] .step-badge {
+  margin-left: auto !important;
+  margin-right: 0 !important;
+  display: flex !important;
+}
+
+@media (min-width: 1024px) {
+  html[dir="rtl"] .process-step-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    direction: rtl !important;
+  }
+}
+
+/* 5. Form Inputs, Selects, Textareas, Labels */
+html[dir="rtl"] input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]):not([type="tel"]),
+html[dir="rtl"] select,
+html[dir="rtl"] textarea {
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+html[dir="rtl"] input::placeholder,
+html[dir="rtl"] textarea::placeholder {
+  text-align: right !important;
+}
+
+/* Internal icon padding for inputs */
+html[dir="rtl"] .relative > input.pl-10,
+html[dir="rtl"] .relative > select.pl-10,
+html[dir="rtl"] .relative > textarea.pl-10 {
+  padding-left: 1rem !important;
+  padding-right: 2.5rem !important;
+  padding-inline-start: 2.5rem !important;
+  padding-inline-end: 1rem !important;
+}
+
+html[dir="rtl"] .relative > input.pr-10,
+html[dir="rtl"] .relative > select.pr-10 {
+  padding-right: 1rem !important;
+  padding-left: 2.5rem !important;
+  padding-inline-end: 2.5rem !important;
+  padding-inline-start: 1rem !important;
+}
+
+/* Icon positioning inside inputs */
+html[dir="rtl"] .relative > i.absolute.left-3,
+html[dir="rtl"] .relative > i.absolute.left-3\.5,
+html[dir="rtl"] .relative > i.absolute.left-4 {
+  left: auto !important;
+  right: 0.875rem !important;
+  inset-inline-start: 0.875rem !important;
+}
+
+html[dir="rtl"] .relative > button.password-toggle-btn,
+html[dir="rtl"] .relative > button.absolute.right-3,
+html[dir="rtl"] .relative > button.absolute.right-3\.5 {
+  right: auto !important;
+  left: 0.875rem !important;
+  inset-inline-end: 0.875rem !important;
+}
+
+/* Checkbox and Radio labels */
+html[dir="rtl"] input[type="checkbox"],
+html[dir="rtl"] input[type="radio"] {
+  margin-right: 0 !important;
+  margin-left: 0.5rem !important;
+  margin-inline-end: 0.5rem !important;
+  margin-inline-start: 0 !important;
+}
+
+/* 6. Flexbox & Grid Flow in RTL */
+html[dir="rtl"] .flex,
+html[dir="rtl"] .inline-flex {
+  direction: rtl;
+}
+
+html[dir="rtl"] .grid,
+html[dir="rtl"] [class*="grid-cols-"] {
+  direction: rtl !important;
+}
+
+/* Tailwind Space-X Reversal Across All Screen Sizes */
+html[dir="rtl"] [class*="space-x-"] > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1 !important;
+}
+
+@media (min-width: 640px) {
+  html[dir="rtl"] [class*="sm:space-x-"] > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 1 !important;
+  }
+}
+@media (min-width: 768px) {
+  html[dir="rtl"] [class*="md:space-x-"] > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 1 !important;
+  }
+}
+@media (min-width: 1024px) {
+  html[dir="rtl"] [class*="lg:space-x-"] > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 1 !important;
+  }
+}
+@media (min-width: 1280px) {
+  html[dir="rtl"] [class*="xl:space-x-"] > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 1 !important;
+  }
+}
+
+/* Divide utilities */
+html[dir="rtl"] [class*="divide-x"] > :not([hidden]) ~ :not([hidden]) {
+  border-left-width: 0 !important;
+  border-right-width: 1px !important;
+  --tw-divide-x-reverse: 1 !important;
+}
+
+/* 7. Logical Margins (mr-* becomes margin-left, ml-* becomes margin-right) */
+html[dir="rtl"] .mr-0\.5 { margin-right: 0 !important; margin-left: 0.125rem !important; }
+html[dir="rtl"] .mr-1 { margin-right: 0 !important; margin-left: 0.25rem !important; }
+html[dir="rtl"] .mr-1\.5 { margin-right: 0 !important; margin-left: 0.375rem !important; }
+html[dir="rtl"] .mr-2 { margin-right: 0 !important; margin-left: 0.5rem !important; }
+html[dir="rtl"] .mr-2\.5 { margin-right: 0 !important; margin-left: 0.625rem !important; }
+html[dir="rtl"] .mr-3 { margin-right: 0 !important; margin-left: 0.75rem !important; }
+html[dir="rtl"] .mr-4 { margin-right: 0 !important; margin-left: 1rem !important; }
+html[dir="rtl"] .mr-6 { margin-right: 0 !important; margin-left: 1.5rem !important; }
+
+html[dir="rtl"] .ml-0\.5 { margin-left: 0 !important; margin-right: 0.125rem !important; }
+html[dir="rtl"] .ml-1 { margin-left: 0 !important; margin-right: 0.25rem !important; }
+html[dir="rtl"] .ml-1\.5 { margin-left: 0 !important; margin-right: 0.375rem !important; }
+html[dir="rtl"] .ml-2 { margin-left: 0 !important; margin-right: 0.5rem !important; }
+html[dir="rtl"] .ml-2\.5 { margin-left: 0 !important; margin-right: 0.625rem !important; }
+html[dir="rtl"] .ml-3 { margin-left: 0 !important; margin-right: 0.75rem !important; }
+html[dir="rtl"] .ml-4 { margin-left: 0 !important; margin-right: 1rem !important; }
+html[dir="rtl"] .ml-6 { margin-left: 0 !important; margin-right: 1.5rem !important; }
+
+html[dir="rtl"] .ml-auto {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  margin-inline-start: auto !important;
+  margin-inline-end: 0 !important;
+}
+
+html[dir="rtl"] .mr-auto {
+  margin-right: 0 !important;
+  margin-left: auto !important;
+  margin-inline-end: auto !important;
+  margin-inline-start: 0 !important;
+}
+
+/* 8. Insurance, Service & Blog Cards */
+html[dir="rtl"] .insurance-card,
+html[dir="rtl"] .service-card,
+html[dir="rtl"] .card,
+html[dir="rtl"] .pricing-card,
+html[dir="rtl"] .blog-card {
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+html[dir="rtl"] .insurance-card h2,
+html[dir="rtl"] .insurance-card h3,
+html[dir="rtl"] .insurance-card h4,
+html[dir="rtl"] .insurance-card h5,
+html[dir="rtl"] .insurance-card p,
+html[dir="rtl"] .insurance-card ul,
+html[dir="rtl"] .insurance-card ol,
+html[dir="rtl"] .insurance-card li,
+html[dir="rtl"] .service-card h2,
+html[dir="rtl"] .service-card h3,
+html[dir="rtl"] .service-card h4,
+html[dir="rtl"] .service-card h5,
+html[dir="rtl"] .service-card p,
+html[dir="rtl"] .service-card ul,
+html[dir="rtl"] .service-card ol,
+html[dir="rtl"] .service-card li,
+html[dir="rtl"] .pricing-card h2,
+html[dir="rtl"] .pricing-card h3,
+html[dir="rtl"] .pricing-card h4,
+html[dir="rtl"] .pricing-card p,
+html[dir="rtl"] .pricing-card ul,
+html[dir="rtl"] .pricing-card li,
+html[dir="rtl"] .blog-card h2,
+html[dir="rtl"] .blog-card h3,
+html[dir="rtl"] .blog-card h4,
+html[dir="rtl"] .blog-card p {
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+/* Service Card Icons placed on the right edge in RTL */
+html[dir="rtl"] .insurance-card .w-14.h-14,
+html[dir="rtl"] .insurance-card .w-12.h-12,
+html[dir="rtl"] .insurance-card .w-16.h-16,
+html[dir="rtl"] .service-card .w-14.h-14,
+html[dir="rtl"] .service-card .w-12.h-12,
+html[dir="rtl"] .service-card .w-16.h-16 {
+  margin-left: auto !important;
+  margin-right: 0 !important;
+  display: flex !important;
+}
+
+/* Service Card Feature Checklist items with reversed checkmark margin */
+html[dir="rtl"] .insurance-card ul li,
+html[dir="rtl"] .insurance-card .space-y-2 > div,
+html[dir="rtl"] .insurance-card .space-y-2 > li,
+html[dir="rtl"] .service-card ul li,
+html[dir="rtl"] .service-card .space-y-2 > div,
+html[dir="rtl"] .service-card .space-y-2 > li {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+html[dir="rtl"] .insurance-card ul li i,
+html[dir="rtl"] .insurance-card .space-y-2 > div i,
+html[dir="rtl"] .insurance-card .space-y-2 > li i,
+html[dir="rtl"] .service-card ul li i,
+html[dir="rtl"] .service-card .space-y-2 > div i,
+html[dir="rtl"] .service-card .space-y-2 > li i {
+  margin-right: 0 !important;
+  margin-left: 0.5rem !important;
+  flex-shrink: 0;
+}
+
+/* Service Card Action Footer (Learn More on right, Get Quote on left in RTL) */
+html[dir="rtl"] .insurance-card .pt-4.flex,
+html[dir="rtl"] .service-card .pt-4.flex {
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  direction: rtl !important;
+}
+
+/* Service Card Arrow Icon Flipping */
+html[dir="rtl"] .insurance-card .fa-arrow-right,
+html[dir="rtl"] .service-card .fa-arrow-right {
+  margin-left: 0 !important;
+  margin-right: 0.375rem !important;
+  transform: scaleX(-1);
+  display: inline-block;
+}
+
+/* Service Card Badges flip to top-left in RTL */
+html[dir="rtl"] .insurance-card .absolute.top-4.right-4,
+html[dir="rtl"] .service-card .absolute.top-4.right-4,
+html[dir="rtl"] .pricing-card .absolute.top-4.right-4,
+html[dir="rtl"] .insurance-card .absolute[class*="right-4"],
+html[dir="rtl"] .service-card .absolute[class*="right-4"] {
+  right: auto !important;
+  left: 1rem !important;
+  inset-inline-start: auto !important;
+  inset-inline-end: 1rem !important;
+}
+
+/* 9. Hero Section Gradients */
+html[dir="rtl"] .bg-gradient-to-r {
+  background-image: linear-gradient(to left, var(--tw-gradient-stops)) !important;
+}
+html[dir="rtl"] .bg-gradient-to-l {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops)) !important;
+}
+
+/* 10. Data Tables & Pricing Comparison Matrix */
+html[dir="rtl"] table {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+html[dir="rtl"] th,
+html[dir="rtl"] td {
+  text-align: right !important;
+}
+
+html[dir="rtl"] th.text-center,
+html[dir="rtl"] td.text-center {
+  text-align: center !important;
+}
+
+html[dir="rtl"] th.text-left,
+html[dir="rtl"] td.text-left {
+  text-align: right !important;
+}
+
+html[dir="rtl"] th.text-right,
+html[dir="rtl"] td.text-right {
+  text-align: left !important;
+}
+
+/* 11. Navigation, Dropdown Menus & Mobile Drawers */
+html[dir="rtl"] header .absolute.left-0,
+html[dir="rtl"] .group > .absolute.left-0 {
+  left: auto !important;
+  right: 0 !important;
+  inset-inline-start: 0 !important;
+}
+
+html[dir="rtl"] #mobile-menu > div {
+  right: auto !important;
+  left: 0 !important;
+  inset-inline-start: auto !important;
+  inset-inline-end: 0 !important;
+}
+
+/* Modal Close Buttons */
+html[dir="rtl"] .close-quote-modal,
+html[dir="rtl"] .modal-close-btn {
+  right: auto !important;
+  left: 1.25rem !important;
+  inset-inline-end: auto !important;
+  inset-inline-start: 1.25rem !important;
+}
+
+/* 12. Dashboards (Client & Admin) */
+@media (min-width: 1024px) {
+  html[dir="rtl"] #dashboard-sidebar,
+  html[dir="rtl"] #admin-sidebar {
+    border-right-width: 0 !important;
+    border-left-width: 1px !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  #dashboard-sidebar,
+  #admin-sidebar {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  [dir="ltr"] #dashboard-sidebar:not(.sidebar-open),
+  [dir="ltr"] #admin-sidebar:not(.sidebar-open) {
+    transform: translateX(-100%) !important;
+  }
+
+  [dir="ltr"] #dashboard-sidebar.sidebar-open,
+  [dir="ltr"] #admin-sidebar.sidebar-open {
+    transform: translateX(0) !important;
+  }
+
+  html[dir="rtl"] #dashboard-sidebar,
+  html[dir="rtl"] #admin-sidebar {
+    left: auto !important;
+    right: 0 !important;
+    transform: translateX(100%) !important;
+  }
+
+  html[dir="rtl"] #dashboard-sidebar.sidebar-open,
+  html[dir="rtl"] #admin-sidebar.sidebar-open {
+    transform: translateX(0) !important;
+  }
+}
+
+html[dir="rtl"] .dashboard-nav-item,
+html[dir="rtl"] .admin-nav-item {
+  text-align: right !important;
+}
+
+/* 13. Footer Columns & Links */
+html[dir="rtl"] footer {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+html[dir="rtl"] footer .grid {
+  direction: rtl !important;
+}
+
+html[dir="rtl"] footer h4,
+html[dir="rtl"] footer ul,
+html[dir="rtl"] footer li,
+html[dir="rtl"] footer a,
+html[dir="rtl"] footer p {
+  text-align: right !important;
+}
+
+/* 14. Toast Notification Container */
+html[dir="rtl"] #toast-container {
+  right: auto !important;
+  left: 1.25rem !important;
+  inset-inline-end: auto !important;
+  inset-inline-start: 1.25rem !important;
+}
+
+/* 15. Directional Icon Flipping */
+html[dir="rtl"] .fa-arrow-right,
+html[dir="rtl"] .fa-arrow-left,
+html[dir="rtl"] .fa-chevron-right,
+html[dir="rtl"] .fa-chevron-left,
+html[dir="rtl"] .fa-angle-right,
+html[dir="rtl"] .fa-angle-left,
+html[dir="rtl"] .fa-arrow-right-from-bracket,
+html[dir="rtl"] .fa-arrow-left-long,
+html[dir="rtl"] .fa-arrow-right-long {
+  transform: scaleX(-1);
+  display: inline-block;
+}
+
+html[dir="rtl"] .translate-x-1 {
+  transform: translateX(-0.25rem);
+}
+
+/* 16. Border & Corner Flipping */
+html[dir="rtl"] .border-l {
+  border-left-width: 0 !important;
+  border-right-width: 1px !important;
+}
+
+html[dir="rtl"] .border-l-2 {
+  border-left-width: 0 !important;
+  border-right-width: 2px !important;
+}
+
+html[dir="rtl"] .border-l-4 {
+  border-left-width: 0 !important;
+  border-right-width: 4px !important;
+}
+
+html[dir="rtl"] .border-r {
+  border-right-width: 0 !important;
+  border-left-width: 1px !important;
+}
+
+html[dir="rtl"] .border-r-2 {
+  border-right-width: 0 !important;
+  border-left-width: 2px !important;
+}
+
+html[dir="rtl"] .pl-2.border-l,
+html[dir="rtl"] .pl-3.border-l-2,
+html[dir="rtl"] .pl-4.border-l-4 {
+  padding-left: 0 !important;
+  padding-right: 0.75rem !important;
+}
+
+html[dir="rtl"] .rounded-l-lg {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-top-right-radius: 0.5rem !important;
+  border-bottom-right-radius: 0.5rem !important;
+}
+
+html[dir="rtl"] .rounded-r-lg {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-top-left-radius: 0.5rem !important;
+  border-bottom-left-radius: 0.5rem !important;
+}
+
+html[dir="rtl"] .rounded-l-xl {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-top-right-radius: 0.75rem !important;
+  border-bottom-right-radius: 0.75rem !important;
+}
+
+html[dir="rtl"] .rounded-r-xl {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-top-left-radius: 0.75rem !important;
+  border-bottom-left-radius: 0.75rem !important;
+}
+
+/* 17. Preservation of Naturally LTR Elements (Protected from reversal) */
+html[dir="rtl"] a[href^="tel:"],
+html[dir="rtl"] a[href^="mailto:"],
+html[dir="rtl"] .ltr-preserve,
+html[dir="rtl"] input[type="tel"],
+html[dir="rtl"] input[type="email"],
+html[dir="rtl"] .font-mono,
+html[dir="rtl"] code,
+html[dir="rtl"] pre {
+  direction: ltr !important;
+  unicode-bidi: isolate;
+  text-align: left !important;
+}
+
+html[dir="rtl"] a[href^="tel:"] strong,
+html[dir="rtl"] .ltr-inline {
+  direction: ltr !important;
+  unicode-bidi: isolate;
+  display: inline-block;
+}
+
+/* Vector Logos and Canvas Graphs MUST NOT Flip */
+canvas,
+html[dir="rtl"] canvas {
+  direction: ltr !important;
+}
+
+svg,
+html[dir="rtl"] svg {
+  transform: none !important;
+}
+
+/* Focus Accessibility */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid #D97706;
+  outline-offset: 2px;
+}
+
+/* Accordion Smooth Transitions */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease-out, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.faq-answer.open {
+  max-height: 500px;
+  opacity: 1;
+}
+
+/* FAQ Accordions & Dropdown Menus in RTL */
+html[dir="rtl"] .faq-question-btn {
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+html[dir="rtl"] .faq-answer {
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+html[dir="rtl"] .mobile-dropdown-btn {
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+html[dir="rtl"] .md\:text-left {
+  text-align: right !important;
+}
+
+/* Timeline Components */
+.timeline-stem::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 20px;
+  width: 2px;
+  background: #E2E8F0;
+}
+
+.dark .timeline-stem::before {
+  background: #334155;
+}
+
+html[dir="rtl"] .timeline-stem::before {
+  left: auto !important;
+  right: 20px !important;
+  inset-inline-start: 20px !important;
+}
+
+/* Form Styles & Badges */
+.input-field {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-field:focus {
+  border-color: #D97706;
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.15);
+}
+
+/* Shimmer & Pulse Animation */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+.glow-animation {
+  animation: pulseGlow 4s infinite ease-in-out;
+}
+
+/* Modal Backdrop */
+.modal-backdrop {
+  background: rgba(6, 13, 23, 0.75);
+  backdrop-filter: blur(4px);
+}
+
+/* Print Friendly Styles */
+@media print {
+  .no-print, header, footer, .modal {
+    display: none !important;
+  }
+  body {
+    background: #FFF !important;
+    color: #000 !important;
+  }
+}
+
+/* ==========================================================================
+   Hero & Page Header Background Imagery System (Light Left / Dark Right)
+   ========================================================================== */
+.hero-page-section {
+  position: relative;
+  overflow: hidden;
+  background-color: #FFFFFF !important;
+}
+
+html.dark .hero-page-section {
+  background-color: #060D17 !important;
+}
+
+.hero-bg-container {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-bg-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 58%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
+  opacity: 0.95;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+/* Light mode overlay: Pure solid white on the left (0% to 54%) ensuring 100% high-contrast
+   legibility for dark text, smoothly transitioning into a soft transparent layer over the 
+   right-side architectural photography without muddy navy patches. */
+.hero-directional-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, 
+    #FFFFFF 0%, 
+    #FFFFFF 54%, 
+    rgba(255, 255, 255, 0.95) 64%, 
+    rgba(255, 255, 255, 0.55) 76%, 
+    rgba(255, 255, 255, 0.12) 100%
+  ) !important;
+  transition: background 0.3s ease;
+}
+
+/* Dark mode overlay: Pure solid dark navy on the left (0% to 54%) for crystal-clear white text,
+   transitioning into a deep architectural contrast layer on the right. */
+html.dark .hero-directional-overlay {
+  background: linear-gradient(90deg, 
+    #0A192F 0%, 
+    #0A192F 54%, 
+    rgba(10, 25, 47, 0.95) 64%, 
+    rgba(10, 25, 47, 0.60) 76%, 
+    rgba(6, 13, 23, 0.35) 100%
+  ) !important;
+}
+
+/* Centered Client Portal Overlay: Symmetrical balanced backdrop with soft blur */
+.portal-centered-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, rgba(15, 23, 42, 0.40) 0%, rgba(10, 25, 47, 0.72) 100%) !important;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  transition: background 0.3s ease;
+}
+
+html.dark .portal-centered-overlay {
+  background: radial-gradient(ellipse at center, rgba(10, 25, 47, 0.55) 0%, rgba(6, 13, 23, 0.85) 100%) !important;
+}
+
+/* Full-screen background image for Login & Register Portal pages (overrides 58% half width) */
+.portal-full-bg-img {
+  position: absolute !important;
+  inset: 0 !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  opacity: 0.95 !important;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+html.dark .portal-full-bg-img {
+  opacity: 0.90 !important;
+  filter: brightness(0.85) contrast(1.15) !important;
+}
+
+html.dark .hero-bg-img {
+  opacity: 0.85;
+  filter: brightness(0.9) contrast(1.1);
+}
+
+/* RTL Support: Text is on the right (0% to 54%), architectural photography on the left */
+html[dir="rtl"] .hero-bg-img {
+  right: auto;
+  left: 0;
+  object-position: center left;
+}
+
+html[dir="rtl"] .hero-directional-overlay {
+  background: linear-gradient(270deg, 
+    #FFFFFF 0%, 
+    #FFFFFF 54%, 
+    rgba(255, 255, 255, 0.95) 64%, 
+    rgba(255, 255, 255, 0.55) 76%, 
+    rgba(255, 255, 255, 0.12) 100%
+  ) !important;
+}
+
+html[dir="rtl"].dark .hero-directional-overlay {
+  background: linear-gradient(270deg, 
+    #0A192F 0%, 
+    #0A192F 54%, 
+    rgba(10, 25, 47, 0.95) 64%, 
+    rgba(10, 25, 47, 0.60) 76%, 
+    rgba(6, 13, 23, 0.35) 100%
+  ) !important;
+}
+
+@media (max-width: 768px) {
+  .hero-bg-img {
+    width: 100% !important;
+    right: 0 !important;
+    left: 0 !important;
+    opacity: 0.10 !important;
+  }
+  .hero-directional-overlay {
+    background: #FFFFFF !important;
+  }
+  html.dark .hero-directional-overlay {
+    background: #0A192F !important;
+  }
+}
+
+/* Pricing Cards Alignment & Badge Visibility */
+.pricing-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+  border-radius: 24px !important;
+  overflow: visible !important;
+  position: relative;
+}
+.pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(10, 25, 47, 0.1), 0 10px 10px -5px rgba(10, 25, 47, 0.04);
+}
+.dark .pricing-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+/* Branded Search Input Logo Symbol */
+.search-logo-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1rem;
+  pointer-events: none;
+  user-select: none;
+  flex-shrink: 0;
+  z-index: 10;
+}
+html[dir="rtl"] .search-logo-icon {
+  left: auto !important;
+  right: 1rem !important;
+}
+html[dir="rtl"] #blog-search-input {
+  padding-left: 1rem !important;
+  padding-right: 3rem !important;
+}
