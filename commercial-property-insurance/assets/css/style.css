@@ -1,0 +1,966 @@
+/* ==========================================================================
+   Aurevanta Risk Solutions - Commercial Property Insurance Broker
+   Project Stylesheet: assets/css/style.css
+   Tech: HTML5, CSS3, Bootstrap 5
+   Brand Palette:
+     - Deep Navy:       #101D35
+     - Royal Blue:      #244C82
+     - Soft Blue-Grey:  #EAF0F7
+     - Warm Gold:       #D6AD60
+     - White:           #FFFFFF
+     - Pattern Tint:    #F4F6FA
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CSS Custom Properties / Design Tokens
+   -------------------------------------------------------------------------- */
+:root {
+  --navy-deep: #101D35;
+  --navy-surface: #172847;
+  --royal-blue: #244C82;
+  --royal-blue-hover: #1b3a64;
+  --royal-light: #e5edf7;
+  
+  --gold: #D6AD60;
+  --gold-hover: #c49a4a;
+  --gold-dark: #9e7428;
+  --gold-light: #faf5eb;
+  --gold-border: rgba(214, 173, 96, 0.45);
+
+  --bg-soft-blue: #EAF0F7;
+  --bg-pattern: #F4F6FA;
+  --white: #FFFFFF;
+
+  --text-dark: #101D35;
+  --text-body: #475569;
+  --text-muted: #64748b;
+  --text-light: #e2e8f0;
+
+  --border-subtle: #DCE5F2;
+  --border-light: rgba(255, 255, 255, 0.12);
+
+  --card-radius: 1rem;
+  --card-shadow: 0 8px 24px rgba(16, 29, 53, 0.05);
+  --card-hover-shadow: 0 16px 32px rgba(16, 29, 53, 0.10);
+  --transition-smooth: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --------------------------------------------------------------------------
+   2. Global Typography & Base Elements
+   -------------------------------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text-body);
+  background-color: var(--white);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--navy-deep);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+a {
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.text-navy {
+  color: var(--navy-deep) !important;
+}
+
+.text-royal {
+  color: var(--royal-blue) !important;
+}
+
+.text-gold {
+  color: var(--gold) !important;
+}
+
+.bg-soft-blue {
+  background-color: var(--bg-soft-blue) !important;
+}
+
+.bg-navy-deep {
+  background-color: var(--navy-deep) !important;
+}
+
+.bg-royal-blue {
+  background-color: var(--royal-blue) !important;
+}
+
+/* Section Header Shared Utility */
+.section-tagline {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--royal-blue);
+  background: var(--royal-light);
+  padding: 0.35rem 0.95rem;
+  border-radius: 50rem;
+  margin-bottom: 0.85rem;
+}
+
+.section-tagline.gold-tag {
+  color: #7b5816;
+  background: var(--gold-light);
+  border: 1px solid var(--gold-border);
+}
+
+.section-tagline.light {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--gold);
+  border: 1px solid rgba(214, 173, 96, 0.35);
+}
+
+/* Gold decorative line utility */
+.gold-accent-line {
+  width: 48px;
+  height: 3px;
+  background-color: var(--gold);
+  border-radius: 2px;
+  margin-bottom: 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   3. Top Announcement & Utility Bar
+   -------------------------------------------------------------------------- */
+.top-bar {
+  background-color: var(--navy-deep);
+  color: #94a3b8;
+  font-size: 0.825rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.top-bar a {
+  color: #cbd5e1;
+}
+
+.top-bar a:hover {
+  color: var(--gold);
+}
+
+.top-bar-divider {
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 0.75rem;
+  vertical-align: middle;
+}
+
+/* --------------------------------------------------------------------------
+   4. Main Navigation Header (Clean White / Light Blue-Grey Background)
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  background: var(--white);
+  border-bottom: 1px solid var(--border-subtle);
+  box-shadow: 0 4px 18px rgba(16, 29, 53, 0.04);
+  transition: var(--transition-smooth);
+}
+
+.site-header.scrolled {
+  box-shadow: 0 6px 24px rgba(16, 29, 53, 0.09);
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.navbar-brand img {
+  height: 44px;
+  width: auto;
+}
+
+.navbar .nav-link {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--navy-deep);
+  padding: 0.75rem 1rem !important;
+  transition: var(--transition-smooth);
+  position: relative;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: var(--royal-blue);
+}
+
+.navbar .nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 1rem;
+  right: 1rem;
+  height: 3px;
+  background-color: var(--gold);
+  border-radius: 2px;
+}
+
+.navbar .dropdown-menu {
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 10px 25px rgba(16, 29, 53, 0.08);
+  border-radius: 0.75rem;
+  padding: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.navbar .dropdown-item {
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  color: var(--text-body);
+}
+
+.navbar .dropdown-item:hover {
+  background-color: var(--royal-light);
+  color: var(--royal-blue);
+}
+
+/* --------------------------------------------------------------------------
+   5. Buttons & Interactive Elements
+   -------------------------------------------------------------------------- */
+.btn {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  padding: 0.65rem 1.45rem;
+  border-radius: 0.55rem;
+  transition: var(--transition-smooth);
+}
+
+.btn-gold {
+  background-color: var(--gold);
+  border-color: var(--gold);
+  color: var(--navy-deep);
+  font-weight: 700;
+}
+
+.btn-gold:hover, .btn-gold:focus {
+  background-color: var(--gold-hover);
+  border-color: var(--gold-hover);
+  color: var(--navy-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(214, 173, 96, 0.35);
+}
+
+.btn-royal {
+  background-color: var(--royal-blue);
+  border-color: var(--royal-blue);
+  color: var(--white);
+}
+
+.btn-royal:hover, .btn-royal:focus {
+  background-color: var(--royal-blue-hover);
+  border-color: var(--royal-blue-hover);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(36, 76, 130, 0.28);
+}
+
+.btn-outline-royal {
+  color: var(--royal-blue);
+  border-color: var(--royal-blue);
+  background-color: transparent;
+}
+
+.btn-outline-royal:hover {
+  background-color: var(--royal-blue);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.btn-outline-light {
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(4px);
+}
+
+.btn-outline-light:hover {
+  background-color: var(--white);
+  border-color: var(--white);
+  color: var(--navy-deep);
+  transform: translateY(-2px);
+}
+
+.btn-lg {
+  padding: 0.85rem 1.85rem;
+  font-size: 1.05rem;
+}
+
+/* --------------------------------------------------------------------------
+   6. Hero Section (Full-Width Building Image + Navy Gradient Overlay)
+   -------------------------------------------------------------------------- */
+.hero-section {
+  position: relative;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  background-color: var(--navy-deep);
+  background-image: 
+    linear-gradient(90deg, rgba(16, 29, 53, 0.96) 0%, rgba(16, 29, 53, 0.88) 45%, rgba(16, 29, 53, 0.35) 80%, rgba(16, 29, 53, 0.15) 100%),
+    url('../images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: 5.5rem 0;
+}
+
+@media (max-width: 991.98px) {
+  .hero-section {
+    min-height: 520px;
+    padding: 4.5rem 0;
+    background-image: 
+      linear-gradient(180deg, rgba(16, 29, 53, 0.96) 0%, rgba(16, 29, 53, 0.88) 100%),
+      url('../images/hero-bg.jpg');
+  }
+}
+
+.hero-title {
+  font-size: clamp(2.3rem, 4.5vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--white);
+  margin-bottom: 1.25rem;
+}
+
+.hero-subtitle {
+  font-size: 1.18rem;
+  color: #d1dced;
+  margin-top: 0;
+  margin-bottom: 1.75rem;
+  max-width: 620px;
+  line-height: 1.65;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(214, 173, 96, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 50rem;
+  padding: 0.4rem 1.15rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+
+.hero-badge .badge-icon {
+  color: var(--gold);
+}
+
+/* --------------------------------------------------------------------------
+   7. Statistics Section (Pale Blue-Grey #EAF0F7 + Architectural Grid Pattern)
+   -------------------------------------------------------------------------- */
+.stats-strip {
+  position: relative;
+  background-color: var(--bg-soft-blue);
+  background-image: 
+    linear-gradient(rgba(36, 76, 130, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(36, 76, 130, 0.035) 1px, transparent 1px);
+  background-size: 32px 32px;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 5rem 0;
+}
+
+@media (max-width: 991.98px) {
+  .stats-strip {
+    padding: 3.75rem 0;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .stats-strip {
+    padding: 3rem 0;
+  }
+}
+
+.stat-card {
+  background: var(--white);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--card-radius);
+  padding: 2.25rem 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition-smooth);
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  box-shadow: var(--card-hover-shadow);
+}
+
+.stat-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--gold-light);
+  color: var(--gold-dark);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--gold-border);
+}
+
+.stat-number {
+  font-size: clamp(2.2rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  color: var(--navy-deep);
+  line-height: 1.1;
+  margin-bottom: 0.35rem;
+}
+
+.stat-label {
+  font-size: 0.925rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 0;
+  line-height: 1.4;
+  max-width: 210px;
+}
+
+/* --------------------------------------------------------------------------
+   8. Services Section (Very Light Blue-Grey #EAF0F7 + White Cards)
+   -------------------------------------------------------------------------- */
+.services-section {
+  background-color: var(--bg-soft-blue);
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(36, 76, 130, 0.04) 0%, transparent 45%),
+    radial-gradient(circle at 90% 80%, rgba(214, 173, 96, 0.05) 0%, transparent 45%);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 5.5rem 0;
+}
+
+.service-card {
+  background: var(--white);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--card-radius);
+  padding: 2.25rem 2rem;
+  height: 100%;
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 18px rgba(16, 29, 53, 0.04);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: transparent;
+  transition: var(--transition-smooth);
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold);
+  box-shadow: var(--card-hover-shadow);
+}
+
+.service-card:hover::after {
+  background-color: var(--gold);
+}
+
+.service-icon-box {
+  width: 58px;
+  height: 58px;
+  border-radius: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  margin-bottom: 1.25rem;
+  background-color: var(--gold-light);
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-border);
+  transition: var(--transition-smooth);
+}
+
+.service-card:hover .service-icon-box {
+  background-color: var(--navy-deep);
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+.service-card h4 {
+  font-size: 1.25rem;
+  color: var(--navy-deep);
+  margin-bottom: 0.75rem;
+}
+
+.service-card p {
+  color: var(--text-body);
+  font-size: 0.9375rem;
+  flex-grow: 1;
+}
+
+.service-features {
+  list-style: none;
+  padding-left: 0;
+  margin: 1rem 0 1.25rem;
+  font-size: 0.875rem;
+}
+
+.service-features li {
+  margin-bottom: 0.45rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-body);
+}
+
+.service-features li i {
+  color: var(--gold-dark);
+  font-size: 0.95rem;
+}
+
+/* --------------------------------------------------------------------------
+   9. Why Choose Us Section (Soft Gradient White to Pale Blue-Grey #EAF0F7)
+   -------------------------------------------------------------------------- */
+.why-us-section {
+  background: linear-gradient(180deg, var(--white) 0%, var(--bg-soft-blue) 100%);
+  padding: 5.5rem 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.why-us-image-wrap {
+  position: relative;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(16, 29, 53, 0.12);
+  border: 1px solid var(--border-subtle);
+}
+
+.why-us-badge {
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+  background: var(--navy-deep);
+  color: var(--white);
+  padding: 1rem 1.4rem;
+  border-radius: 0.75rem;
+  border-left: 4px solid var(--gold);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.feature-box {
+  display: flex;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(220, 229, 242, 0.8);
+  border-radius: 0.75rem;
+  transition: var(--transition-smooth);
+}
+
+.feature-box:hover {
+  background: var(--white);
+  border-color: var(--gold);
+  box-shadow: 0 8px 20px rgba(16, 29, 53, 0.05);
+}
+
+.feature-icon {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  border-radius: 0.75rem;
+  background-color: var(--gold-light);
+  color: var(--gold-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  border: 1px solid var(--gold-border);
+}
+
+/* --------------------------------------------------------------------------
+   10. Business Protection Section (Full-Width Deep Navy #101D35 + Blue Gradient)
+   -------------------------------------------------------------------------- */
+.protection-section {
+  background-color: var(--navy-deep);
+  background-image: 
+    linear-gradient(135deg, #101D35 0%, #152442 50%, #1C355E 100%),
+    radial-gradient(circle at 80% 50%, rgba(36, 76, 130, 0.35) 0%, transparent 60%);
+  color: var(--white);
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(214, 173, 96, 0.2);
+  border-bottom: 1px solid rgba(214, 173, 96, 0.2);
+}
+
+.protection-section::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(36, 76, 130, 0.25) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.protection-image-wrap {
+  position: relative;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  border: 1px solid rgba(214, 173, 96, 0.4);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+.protection-float-badge {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  background: rgba(16, 29, 53, 0.94);
+  border: 1px solid var(--gold);
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  backdrop-filter: blur(8px);
+}
+
+/* --------------------------------------------------------------------------
+   11. Insurance Solutions / Estimator Section (#F4F6FA + Subtle Line Pattern)
+   -------------------------------------------------------------------------- */
+.calculator-section {
+  background-color: var(--bg-pattern);
+  background-image: 
+    linear-gradient(rgba(16, 29, 53, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 29, 53, 0.025) 1px, transparent 1px);
+  background-size: 28px 28px;
+  padding: 5.5rem 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.calculator-card {
+  background: var(--white);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: 2.25rem;
+  position: relative;
+}
+
+.calculator-card .form-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--navy-deep);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.calculator-result-box {
+  background: linear-gradient(135deg, var(--navy-deep) 0%, var(--royal-blue) 100%);
+  border-radius: 0.75rem;
+  padding: 1.6rem;
+  color: var(--white);
+  border: 1px solid rgba(214, 173, 96, 0.35);
+}
+
+.calc-estimate-amount {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--gold);
+  line-height: 1.2;
+}
+
+/* --------------------------------------------------------------------------
+   12. Testimonials Section (Pale Blue-Grey #EAF0F7 + White Cards & Gold Quotes)
+   -------------------------------------------------------------------------- */
+.testimonials-section {
+  background-color: var(--bg-soft-blue);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 5.5rem 0;
+}
+
+.testimonial-card {
+  background: var(--white);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--card-radius);
+  padding: 2.25rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 20px rgba(16, 29, 53, 0.04);
+  transition: var(--transition-smooth);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  box-shadow: var(--card-hover-shadow);
+}
+
+.testimonial-quote-icon {
+  font-size: 2.2rem;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.testimonial-rating {
+  color: var(--gold);
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.testimonial-quote {
+  font-size: 0.975rem;
+  font-style: italic;
+  color: var(--text-body);
+  flex-grow: 1;
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.client-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--royal-light);
+  color: var(--royal-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: 1px solid rgba(36, 76, 130, 0.2);
+}
+
+/* --------------------------------------------------------------------------
+   13. Accordion / FAQ Section (Soft Architectural Pattern - No Plain White)
+   -------------------------------------------------------------------------- */
+.faq-section {
+  background-color: var(--bg-pattern);
+  background-image: 
+    linear-gradient(rgba(36, 76, 130, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(36, 76, 130, 0.035) 1px, transparent 1px);
+  background-size: 32px 32px;
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 5.5rem 0;
+}
+
+.accordion-item {
+  border: 1px solid var(--border-subtle);
+  border-radius: 0.75rem !important;
+  margin-bottom: 0.85rem;
+  overflow: hidden;
+  background-color: var(--white);
+  box-shadow: 0 4px 12px rgba(16, 29, 53, 0.03);
+}
+
+.accordion-button {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--navy-deep);
+  background-color: var(--white);
+  padding: 1.25rem 1.5rem;
+}
+
+.accordion-button:not(.collapsed) {
+  color: var(--royal-blue);
+  background-color: var(--royal-light);
+  box-shadow: none;
+}
+
+.accordion-body {
+  color: var(--text-body);
+  padding: 1.25rem 1.5rem;
+  background-color: var(--white);
+  line-height: 1.7;
+}
+
+/* --------------------------------------------------------------------------
+   14. Call To Action Banner Section (Royal-to-Navy Gradient + Geometric Lines)
+   -------------------------------------------------------------------------- */
+.cta-section {
+  background: linear-gradient(135deg, #101D35 0%, #172B4D 45%, #244C82 100%);
+  padding: 5.5rem 0;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(214, 173, 96, 0.25);
+}
+
+.cta-banner {
+  background: rgba(16, 29, 53, 0.45);
+  border-radius: 1.5rem;
+  padding: 4.5rem 3.5rem;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(214, 173, 96, 0.35);
+  box-shadow: 0 20px 45px rgba(16, 29, 53, 0.25);
+  backdrop-filter: blur(10px);
+}
+
+/* Subtle abstract geometric lines at low opacity */
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 280px;
+  height: 280px;
+  border: 1.5px solid rgba(214, 173, 96, 0.18);
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+
+.cta-banner::after {
+  content: '';
+  position: absolute;
+  bottom: -70px;
+  right: 180px;
+  width: 220px;
+  height: 220px;
+  border: 1.5px solid rgba(255, 255, 255, 0.08);
+  transform: rotate(30deg);
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   15. Footer (Deep Navy #101D35 + Single White Brand + Light Grey Tagline)
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background-color: var(--navy-deep);
+  color: #94a3b8;
+  padding-top: 5rem;
+  padding-bottom: 2rem;
+  border-top: 3px solid var(--royal-blue);
+}
+
+.footer-brand {
+  margin-bottom: 1.25rem;
+}
+
+.footer-brand a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+}
+
+.footer-logo-img {
+  width: 44px;
+  height: 50px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.25));
+}
+
+.footer-brand-title {
+  color: var(--white);
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.15rem;
+  line-height: 1.15;
+}
+
+.footer-tagline {
+  color: #94a3b8;
+  font-size: 0.825rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  line-height: 1.2;
+}
+
+.site-footer h5 {
+  color: var(--white);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.65rem;
+}
+
+.footer-links a {
+  color: #a0aec0;
+  font-size: 0.925rem;
+}
+
+.footer-links a:hover {
+  color: var(--gold);
+  padding-left: 4px;
+}
+
+.footer-bottom {
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.85rem;
+}
+
+/* --------------------------------------------------------------------------
+   16. Back to Top Button
+   -------------------------------------------------------------------------- */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: var(--royal-blue);
+  color: var(--white);
+  border: 1px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(16, 29, 53, 0.35);
+  cursor: pointer;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-smooth);
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background: var(--gold);
+  color: var(--navy-deep);
+  transform: translateY(-3px);
+}

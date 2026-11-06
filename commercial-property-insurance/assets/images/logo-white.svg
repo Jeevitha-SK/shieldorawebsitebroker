@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 295 60" width="295" height="60" fill="none">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#244C82" />
+      <stop offset="100%" stop-color="#101D35" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D6AD60" />
+      <stop offset="100%" stop-color="#B88A36" />
+    </linearGradient>
+  </defs>
+  <!-- Shield Icon -->
+  <path d="M26 6 L44 14 V28 C44 40 35 49 26 53 C17 49 8 40 8 28 V14 Z" fill="url(#shieldGrad)" />
+  <!-- Commercial Building Silhouette inside Shield -->
+  <path d="M19 40 V24 H26 V40 H19 Z" fill="#ffffff" opacity="0.95" />
+  <path d="M28 40 V19 H34 V40 H28 Z" fill="url(#goldGrad)" />
+  <!-- Small window dots -->
+  <rect x="21" y="27" width="2" height="2" fill="#101D35" />
+  <rect x="21" y="32" width="2" height="2" fill="#101D35" />
+  <rect x="30" y="22" width="2" height="2" fill="#ffffff" />
+  <rect x="30" y="27" width="2" height="2" fill="#ffffff" />
+  <rect x="30" y="32" width="2" height="2" fill="#ffffff" />
+  <!-- Brand Text in White and Light Grey for Dark Backgrounds -->
+  <text x="56" y="28" font-family="'Plus Jakarta Sans', 'Segoe UI', Arial, sans-serif" font-size="20" font-weight="800" letter-spacing="1.2" fill="#FFFFFF">AUREVANTA</text>
+  <text x="56" y="44" font-family="'Plus Jakarta Sans', 'Segoe UI', Arial, sans-serif" font-size="10.5" font-weight="600" letter-spacing="0.8" fill="#94a3b8">Risk &amp; Insurance Solutions</text>
+</svg>
