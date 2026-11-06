@@ -1,0 +1,69 @@
+{
+  "brokerage": {
+    "name": "Shieldora Risk Solutions",
+    "tagline": "Protecting Your Property. Securing Your Future.",
+    "license": "NY DFS #BR-89102",
+    "headquarters": "350 Fifth Avenue, 44th Floor, New York, NY 10118",
+    "emergencyPhone": "+1 (800) 555-RISK",
+    "directPhone": "+1 (800) 555-7475",
+    "email": "brokerage@shieldora.com"
+  },
+  "samplePolicies": [
+    {
+      "id": "SHLD-2024-NY-891",
+      "property": "Midtown Executive Tower",
+      "location": "350 5th Avenue, New York, NY",
+      "type": "Special Form All-Risk Property",
+      "limit": "$25,000,000",
+      "deductible": "$25,000",
+      "carrier": "Chubb Underwriting Syndicate",
+      "effective": "2026-01-01",
+      "expiration": "2027-01-01",
+      "status": "Active"
+    },
+    {
+      "id": "SHLD-2025-IL-402",
+      "property": "Oakridge Distribution Logistics Hub",
+      "location": "1200 Logistics Pkwy, Joliet, IL",
+      "type": "Commercial Property & ESFR Leakage",
+      "limit": "$14,500,000",
+      "deductible": "$15,000",
+      "carrier": "Travelers Specialty",
+      "effective": "2026-03-15",
+      "expiration": "2027-03-15",
+      "status": "Active"
+    },
+    {
+      "id": "SHLD-2025-TX-911",
+      "property": "Memorial Galleria Retail Plaza",
+      "location": "8400 Westheimer Rd, Houston, TX",
+      "type": "Commercial Property & Hurricane Layer",
+      "limit": "$18,000,000",
+      "deductible": "2% Named Windstorm",
+      "carrier": "AIG Commercial",
+      "effective": "2025-11-01",
+      "expiration": "2026-11-01",
+      "status": "Pending Renewal"
+    }
+  ],
+  "sampleClaims": [
+    {
+      "claimRef": "CLM-8921-2026",
+      "property": "Oakridge Distribution Logistics Hub",
+      "date": "2026-10-06",
+      "peril": "HVAC Chiller Rupture (Water Intrusion)",
+      "estimatedLoss": "$45,000",
+      "status": "Under Review",
+      "adjuster": "Timothy Reynolds (Crawford & Co)"
+    },
+    {
+      "claimRef": "CLM-4491-2025",
+      "property": "Midtown Executive Tower",
+      "date": "2025-11-12",
+      "peril": "Electrical Smoke Damage",
+      "estimatedLoss": "$182,400",
+      "status": "Closed & Paid in Full",
+      "adjuster": "Sedgwick Claims Global"
+    }
+  ]
+}

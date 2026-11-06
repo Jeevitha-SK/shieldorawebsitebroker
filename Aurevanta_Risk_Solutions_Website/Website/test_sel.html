@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src='https://cdn.tailwindcss.com'></script>
+  <!-- Resilient Responsive Inline Critical Navigation Spacing & Sticky Header -->
+  <style id="critical-navbar-spacing">
+    html, body {
+      overflow-x: clip !important;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    header,
+    header.main-navbar,
+    .main-navbar {
+      position: -webkit-sticky !important;
+      position: sticky !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      z-index: 1000 !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      background-color: #ffffff !important;
+      border-bottom: 1px solid #E2E8F0 !important;
+      box-shadow: 0 2px 10px -2px rgba(11, 17, 32, 0.05) !important;
+      transition: background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
+    }
+    html.dark header,
+    html.dark header.main-navbar,
+    html.dark .main-navbar,
+    .dark header,
+    .dark header.main-navbar,
+    .dark .main-navbar {
+      background-color: #0b1120 !important;
+      border-bottom: 1px solid #1e293b !important;
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.6) !important;
+    }
+    .main-navbar.scrolled,
+    header.scrolled {
+      box-shadow: 0 6px 20px -2px rgba(11, 17, 32, 0.1), 0 2px 6px -1px rgba(11, 17, 32, 0.06) !important;
+    }
+    html.dark .main-navbar.scrolled,
+    html.dark header.scrolled,
+    .dark header.scrolled {
+      box-shadow: 0 8px 25px -2px rgba(0, 0, 0, 0.8), 0 3px 8px -1px rgba(0, 0, 0, 0.6) !important;
+    }
+    .brand-name {
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+    }
+    .brand-title {
+      font-weight: 800 !important;
+      line-height: 1.15 !important;
+    }
+    .brand-subtitle {
+      display: block !important;
+      font-size: 10px !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.12em !important;
+      color: #f59e0b !important;
+      text-transform: uppercase !important;
+      line-height: 1 !important;
+    }
+    .navbar-container {
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    @media (max-width: 639px) {
+      .navbar-container {
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+      }
+    }
+    @media (min-width: 640px) and (max-width: 1023px) {
+      .navbar-container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        padding-top: 12px !important;
+        padding-bottom: 12px !important;
+      }
+    }
+    @media (max-width: 1023px) {
+      .navbar-center,
+      .navbar-right {
+        display: none !important;
+      }
+      .mobile-nav-toggle-wrap {
+        display: flex !important;
+        align-items: center !important;
+        gap: 0.25rem !important;
+      }
+    }
+    @media (min-width: 1024px) {
+      .navbar-container {
+        padding-left: 32px !important;
+        padding-right: 32px !important;
+      }
+      .navbar-center {
+        display: flex !important;
+        align-items: center !important;
+        gap: 1.5rem !important;
+      }
+      .navbar-center .nav-link,
+      .navbar-center > a,
+      .navbar-center > div {
+        margin-left: 0.25rem !important;
+        margin-right: 0.25rem !important;
+      }
+      .navbar-right {
+        display: flex !important;
+        align-items: center !important;
+        gap: 0.75rem !important;
+      }
+      .mobile-nav-toggle-wrap {
+        display: none !important;
+      }
+    }
+    .site-brand img,
+    .site-brand svg {
+      width: 36px !important;
+      height: 36px !important;
+      flex-shrink: 0 !important;
+    }
+    #mobile-menu {
+      z-index: 2000 !important;
+    }
+  </style>
+</head>
+<body class='p-4 bg-slate-900'>
+  <div style='width: 390px; background: red;'>
+    <select class='w-full'>
+      <option>Comprehensive Commercial Real Estate Portfolio with extended text</option>
+    </select>
+  </div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+AUREVANTA RISK SOLUTIONS WEBSITE
+
+1. Open index.html in your browser.
+2. Use the navigation menu to visit all pages.
+3. Read README.md for the file list and demo limitations.
+
+Please keep the assets folder next to the HTML files.

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 56" fill="none">
+  <!-- Shield Outer -->
+  <path d="M26 2L6 9.5V25C6 38.5 14.5 48.5 26 51C37.5 48.5 46 38.5 46 25V9.5L26 2Z" fill="#0A192F" stroke="#D97706" stroke-width="2.5" stroke-linejoin="round"/>
+  
+  <!-- Inner Glow Gradient -->
+  <path d="M26 5L9 11.5V24C9 35.5 16.5 44.5 26 47C35.5 44.5 43 35.5 43 24V11.5L26 5Z" fill="url(#shield_grad)"/>
+  
+  <!-- Skyscraper 1 (Left) -->
+  <rect x="14" y="24" width="6" height="18" rx="1" fill="#FFFFFF" fill-opacity="0.85"/>
+  <line x1="16" y1="27" x2="18" y2="27" stroke="#0A192F" stroke-width="1"/>
+  <line x1="16" y1="31" x2="18" y2="31" stroke="#0A192F" stroke-width="1"/>
+  <line x1="16" y1="35" x2="18" y2="35" stroke="#0A192F" stroke-width="1"/>
+
+  <!-- Skyscraper 2 (Center - Tallest) -->
+  <rect x="22" y="16" width="8" height="26" rx="1" fill="#F59E0B"/>
+  <line x1="24.5" y1="20" x2="27.5" y2="20" stroke="#0A192F" stroke-width="1.2"/>
+  <line x1="24.5" y1="24" x2="27.5" y2="24" stroke="#0A192F" stroke-width="1.2"/>
+  <line x1="24.5" y1="28" x2="27.5" y2="28" stroke="#0A192F" stroke-width="1.2"/>
+  <line x1="24.5" y1="32" x2="27.5" y2="32" stroke="#0A192F" stroke-width="1.2"/>
+  <line x1="24.5" y1="36" x2="27.5" y2="36" stroke="#0A192F" stroke-width="1.2"/>
+
+  <!-- Skyscraper 3 (Right) -->
+  <rect x="32" y="21" width="6" height="21" rx="1" fill="#FFFFFF" fill-opacity="0.85"/>
+  <line x1="34" y1="25" x2="36" y2="25" stroke="#0A192F" stroke-width="1"/>
+  <line x1="34" y1="29" x2="36" y2="29" stroke="#0A192F" stroke-width="1"/>
+  <line x1="34" y1="33" x2="36" y2="33" stroke="#0A192F" stroke-width="1"/>
+
+  <!-- Protection Arch / Sparkle -->
+  <circle cx="26" cy="11" r="2.5" fill="#F59E0B"/>
+
+  <defs>
+    <linearGradient id="shield_grad" x1="26" y1="5" x2="26" y2="47" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1E3A8A"/>
+      <stop offset="1" stop-color="#0A192F"/>
+    </linearGradient>
+  </defs>
+</svg>
